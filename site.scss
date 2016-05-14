@@ -1,0 +1,148 @@
+/*
+*
+*
+*   Chaney Painting Styles
+*
+*
+*
+*/
+
+/*
+*   Fonts
+*/
+@import url(https://fonts.googleapis.com/css?family=Raleway:300|EB+Garamond);
+
+/*
+*   Global Variables
+*/
+// Fonts
+$cp-font-heading: 'Raleway', sans-serif;
+$cp-font-title: 'EB Garamond', serif;
+$cp-font-body: Arial, Helvetica, sans-serif;
+// Font Sizes
+$cp-font-size-base: 16px;
+$cp-font-size-xxl:2.969rem;     // 47.5px
+$cp-font-size-xl:2rem;          // 32px
+$cp-font-size-lg:1.484rem;      // 23.7px
+$cp-font-size-md:1rem;          // 16px
+$cp-font-size-sm:0.742rem;      // 11.8px
+$cp-font-size-xs:0.5rem;        // 8px
+$cp-font-size-xxs:0.371rem;     // 5.9px
+// Colors
+$cp-blue: #004259;
+$cp-brown: #775E53;
+$cp-tan: #A29588;
+$cp-primary: $cp-blue;
+$cp-secondary: $cp-brown;
+$cp-grey: #f9f9f9;
+
+// Spacing
+$cp-space: 4px;
+@function cp-spacing($x) {
+    @return $x * $cp-space;
+}
+
+/*
+*   Global
+*/
+body, html {
+    font-family: $cp-font-body;
+    font-size: $cp-font-size-base;
+    h1 {
+        font-size: $cp-font-size-xl;
+        font-family: $cp-font-heading;
+    }
+    h2 {
+        font-size: $cp-font-size-lg;
+        font-family: $cp-font-title;
+    }
+    a, button {
+        font-family: $cp-font-title;
+        font-size: $cp-font-size-md;
+    }
+    span, p {
+        font-family: $cp-font-body;
+        font-size: $cp-font-size-md;
+    }
+}
+
+/*
+*   Header
+*/
+
+$cp-header-height: 100px;
+
+header {
+    height: $cp-header-height;
+    box-shadow: 0 3px 14px 0 rgba(0,0,0,0.75);
+    div.cp-nav-img {
+        float: left;
+        height: $cp-header-height;
+        img {
+            height: 100%;
+            width: auto;
+            padding: cp-spacing(3) 0;
+        }
+    }
+    div.cp-nav-links {
+        float: right;
+        height: $cp-header-height;
+        ul {
+            margin: 0;
+            height: $cp-header-height;
+            width: auto;
+            padding: 0 cp-spacing(2);
+            li {
+                display: flex;
+                justify-content: center;
+                float: left;
+                height: $cp-header-height;
+                min-width: 70px;
+                a {
+                    text-transform: uppercase;
+                    flex: 0 1 auto;
+                    align-self: center;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// End
