@@ -34,10 +34,12 @@ $cp-brown: #775E53;
 $cp-tan: #A29588;
 $cp-primary: $cp-blue;
 $cp-secondary: $cp-brown;
+$cp-primary-active: darken($cp-primary, 5%);
 $cp-grey: #7F878A;
 $cp-charcoal: #333333;
 $cp-overlay-light: rgba(255,255,255,0.7);
 $cp-overlay-dark: rgba(0,0,0,0.7);
+$cp-offwhite: #dddddd;
 
 // Spacing
 $cp-space: 5px;
@@ -45,7 +47,7 @@ $cp-bs-space: 15px;
 @function cp-spacing($x) {
     @return $x * $cp-space;
 }
-$cp-section-top-margin: cp-spacing(5);
+$cp-section-top-margin: cp-spacing(15);
 
 /*
 *   Global
@@ -74,6 +76,27 @@ body, html {
     }
     section {
         margin-top: $cp-section-top-margin;
+    }
+}
+.cp-cta {
+    display: inline-block;
+    margin: cp-spacing(1) 0;
+    padding: cp-spacing(1) cp-spacing(2);
+    background-color: $cp-primary;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    transition: background-color .2s ease-in-out;
+    &:hover {
+        text-decoration: none;
+        cursor: pointer;
+        color: #ffffff;
+        transition: background-color .2s ease-in-out;
+        background-color: $cp-primary-active;
+    }
+    &:hover,
+    &:active {
+        outline: none;
     }
 }
 
@@ -202,6 +225,7 @@ $cp-paralax-price-height: 600px;
     // height: $cp-paralax-price-height;
     width: 100%;
     div.cp-price {
+        text-align: center;
         background-color: $cp-overlay-light;
         border: 1px solid transparent;
         padding: cp-spacing(7);
@@ -249,19 +273,22 @@ $cp-service-img-height: 200px;
 .cp-contact-section {
 
     .cp-contact-details {
+        padding-top: cp-spacing(4);
+        margin-top: cp-spacing(4);
+        border-top: 2px solid $cp-offwhite;
         span {
             display: block;
         }
-
-
-
-        
     }
 
     form {
         > div {
             width: 100%;
             margin: cp-spacing(2) 0;
+            > input, textarea {
+                border: 2px solid $cp-offwhite;
+                border-radius: 4px;
+            }
             > input {
                 width: 49%;
                 padding: cp-spacing(2);
@@ -280,6 +307,56 @@ $cp-service-img-height: 200px;
 }
 
 
+/*
+*   Gallery Section
+*/
+
+$cp-gallery-screen-height: 400px;
+$cp-gallery-tile-height: 150px;
+$cp-gallery-control-width: 60px;
+$cp-gallery-tile-width: 225px;
+
+.cp-gallery-section {
+
+    .cp-gallery-screen {
+        height: $cp-gallery-screen-height;
+        overflow: hidden;
+        > img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    .cp-gallery-tiles-row {
+        height: $cp-gallery-tile-height;
+        padding: cp-spacing(3) $cp-gallery-control-width;
+        position: relative;
+        top: 0;
+        width: auto;
+        .cp-gallery-control {
+            position: absolute;
+            &.cp-right {
+                right: 0;
+            }
+            &.cp-left {
+                left: 0;
+            }
+        }
+        .cp-gallery-tile {
+            display: block;
+            float: left;
+            height: 100%;
+            width: $cp-gallery-tile-width;
+            overflow: hidden;
+            margin: 0 cp-spacing(2);
+            > img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
 
 
 

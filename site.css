@@ -35,7 +35,25 @@ body, html {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1rem; }
   body section, html section {
-    margin-top: 25px; }
+    margin-top: 75px; }
+
+.cp-cta {
+  display: inline-block;
+  margin: 5px 0;
+  padding: 5px 10px;
+  background-color: #004259;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  transition: background-color .2s ease-in-out; }
+  .cp-cta:hover {
+    text-decoration: none;
+    cursor: pointer;
+    color: #ffffff;
+    transition: background-color .2s ease-in-out;
+    background-color: #002f40; }
+  .cp-cta:hover, .cp-cta:active {
+    outline: none; }
 
 /*
 *   Header
@@ -83,7 +101,7 @@ header {
 */
 .cp-landing-section {
   position: relative;
-  margin-top: 125px;
+  margin-top: 175px;
   height: 400px;
   overflow: hidden; }
   .cp-landing-section img {
@@ -130,6 +148,7 @@ header {
   background-attachment: fixed;
   width: 100%; }
   .cp-paralax-price-container div.cp-price {
+    text-align: center;
     background-color: rgba(255, 255, 255, 0.7);
     border: 1px solid transparent;
     padding: 35px;
@@ -156,12 +175,19 @@ header {
 /*
 *   Contact Section
 */
-.cp-contact-section .cp-contact-details span {
-  display: block; }
+.cp-contact-section .cp-contact-details {
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 2px solid #dddddd; }
+  .cp-contact-section .cp-contact-details span {
+    display: block; }
 
 .cp-contact-section form > div {
   width: 100%;
   margin: 10px 0; }
+  .cp-contact-section form > div > input, .cp-contact-section form > div textarea {
+    border: 2px solid #dddddd;
+    border-radius: 4px; }
   .cp-contact-section form > div > input {
     width: 49%;
     padding: 10px;
@@ -172,6 +198,41 @@ header {
     padding: 10px;
     width: 100%;
     height: 200px; }
+
+/*
+*   Gallery Section
+*/
+.cp-gallery-section .cp-gallery-screen {
+  height: 400px;
+  overflow: hidden; }
+  .cp-gallery-section .cp-gallery-screen > img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; }
+
+.cp-gallery-section .cp-gallery-tiles-row {
+  height: 150px;
+  padding: 15px 60px;
+  position: relative;
+  top: 0;
+  width: auto; }
+  .cp-gallery-section .cp-gallery-tiles-row .cp-gallery-control {
+    position: absolute; }
+    .cp-gallery-section .cp-gallery-tiles-row .cp-gallery-control.cp-right {
+      right: 0; }
+    .cp-gallery-section .cp-gallery-tiles-row .cp-gallery-control.cp-left {
+      left: 0; }
+  .cp-gallery-section .cp-gallery-tiles-row .cp-gallery-tile {
+    display: block;
+    float: left;
+    height: 100%;
+    width: 225px;
+    overflow: hidden;
+    margin: 0 10px; }
+    .cp-gallery-section .cp-gallery-tiles-row .cp-gallery-tile > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
 
 /*
 *   Footer
