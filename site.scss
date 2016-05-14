@@ -16,8 +16,8 @@
 *   Global Variables
 */
 // Fonts
-$cp-font-heading: 'Raleway', sans-serif;
-$cp-font-title: 'EB Garamond', serif;
+$cp-font-heading: 'EB Garamond', serif;
+$cp-font-title: 'Raleway', sans-serif;
 $cp-font-body: Arial, Helvetica, sans-serif;
 // Font Sizes
 $cp-font-size-base: 16px;
@@ -34,13 +34,18 @@ $cp-brown: #775E53;
 $cp-tan: #A29588;
 $cp-primary: $cp-blue;
 $cp-secondary: $cp-brown;
-$cp-grey: #f9f9f9;
+$cp-grey: #7F878A;
+$cp-charcoal: #333333;
+$cp-overlay-light: rgba(255,255,255,0.7);
+$cp-overlay-dark: rgba(0,0,0,0.7);
 
 // Spacing
-$cp-space: 4px;
+$cp-space: 5px;
+$cp-bs-space: 15px;
 @function cp-spacing($x) {
     @return $x * $cp-space;
 }
+$cp-section-top-margin: cp-spacing(5);
 
 /*
 *   Global
@@ -48,13 +53,16 @@ $cp-space: 4px;
 body, html {
     font-family: $cp-font-body;
     font-size: $cp-font-size-base;
+    color: $cp-grey;
     h1 {
-        font-size: $cp-font-size-xl;
+        font-size: $cp-font-size-xxl;
         font-family: $cp-font-heading;
     }
     h2 {
-        font-size: $cp-font-size-lg;
+        font-size: $cp-font-size-xl;
         font-family: $cp-font-title;
+        margin-bottom: 0;
+        color: $cp-primary;
     }
     a, button {
         font-family: $cp-font-title;
@@ -63,6 +71,9 @@ body, html {
     span, p {
         font-family: $cp-font-body;
         font-size: $cp-font-size-md;
+    }
+    section {
+        margin-top: $cp-section-top-margin;
     }
 }
 
@@ -73,8 +84,13 @@ body, html {
 $cp-header-height: 100px;
 
 header {
+    background-color: #ffffff;
+    z-index: 100;
+    width: 100%;
     height: $cp-header-height;
     box-shadow: 0 3px 14px 0 rgba(0,0,0,0.75);
+    position: fixed;
+    top: 0;
     div.cp-nav-img {
         float: left;
         height: $cp-header-height;
@@ -97,7 +113,7 @@ header {
                 justify-content: center;
                 float: left;
                 height: $cp-header-height;
-                min-width: 70px;
+                padding: 0 cp-spacing(3);
                 a {
                     text-transform: uppercase;
                     flex: 0 1 auto;
@@ -108,8 +124,169 @@ header {
     }
 }
 
+/*
+*   First Landing Section
+*/
+
+$cp-landing-section-height: 400px;
+$cp-landing-overlay-width: 300px;
+
+.cp-landing-section {
+    position: relative;
+    margin-top: $cp-header-height + $cp-section-top-margin;
+    height: $cp-landing-section-height;
+    overflow: hidden;
+    img {
+        width: 100%;
+        height: auto;
+    }
+    div.cp-landing-overlay {
+        position: absolute;
+        top: 0;
+        right: $cp-bs-space;
+        padding: cp-spacing(4);
+        height: 100%;
+        width: $cp-landing-overlay-width;
+        background-color: $cp-overlay-light;
+    }
+}
 
 
+/*
+*   About Section
+*/
+
+
+
+.cp-about-section {
+    div.cp-employee {
+        margin-bottom: cp-spacing(10);
+        .cp-about-img {
+            // width: 100%;
+            // padding-top: 100%;
+            border: 1px solid transparent;
+            border-radius: 50%;
+            overflow: hidden;
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+        span {
+            text-align: center;
+            display: block;
+            font-family: $cp-font-heading;
+            &.cp-about-name {
+                font-size: $cp-font-size-lg;
+            }
+            &.cp-about-title {
+                font-size: $cp-font-size-md;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+
+/*
+*   Paralax Price Section
+*/
+
+$cp-paralax-price-height: 600px;
+
+.cp-paralax-price-container {
+    background-image: url(images/paint.jpg);
+    background-size: cover;
+    background-position: top center;
+    background-attachment: fixed;
+    // height: $cp-paralax-price-height;
+    width: 100%;
+    div.cp-price {
+        background-color: $cp-overlay-light;
+        border: 1px solid transparent;
+        padding: cp-spacing(7);
+        border-radius: 12px;
+        margin-top: cp-spacing(30);
+        margin-bottom: cp-spacing(30);
+        p {
+            // padding: cp-spacing(4);
+            color: $cp-charcoal;
+        }
+        h2 {
+            margin: 0;
+        }
+    }
+}
+
+
+/*
+*   Services Section
+*/
+
+$cp-service-img-height: 200px;
+
+.cp-services-section {
+    .cp-service {
+        > div {
+            border: 1px solid transparent;
+            border-radius: 4px;
+            height: $cp-service-img-height;
+            overflow: hidden;
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
+
+
+/*
+*   Contact Section
+*/
+
+
+.cp-contact-section {
+
+    .cp-contact-details {
+        span {
+            display: block;
+        }
+    }
+
+    form {
+        > div {
+            width: 100%;
+            margin: cp-spacing(2) 0;
+            > input {
+                width: 49%;
+                padding: cp-spacing(2);
+                display: inline-block;
+                &:first-child {
+                    margin-right: 1%;
+                }
+            }
+            > textarea {
+                padding: cp-spacing(2);
+                width: 100%;
+                height: 200px;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+/*
+*   Footer
+*/
+
+footer {
+    height: 1000px;
+}
 
 
 

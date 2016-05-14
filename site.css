@@ -18,33 +18,43 @@
 */
 body, html {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px; }
+  font-size: 16px;
+  color: #7F878A; }
   body h1, html h1 {
-    font-size: 2rem;
-    font-family: "Raleway", sans-serif; }
-  body h2, html h2 {
-    font-size: 1.484rem;
+    font-size: 2.969rem;
     font-family: "EB Garamond", serif; }
+  body h2, html h2 {
+    font-size: 2rem;
+    font-family: "Raleway", sans-serif;
+    margin-bottom: 0;
+    color: #004259; }
   body a, body button, html a, html button {
-    font-family: "EB Garamond", serif;
+    font-family: "Raleway", sans-serif;
     font-size: 1rem; }
   body span, body p, html span, html p {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1rem; }
+  body section, html section {
+    margin-top: 25px; }
 
 /*
 *   Header
 */
 header {
+  background-color: #ffffff;
+  z-index: 100;
+  width: 100%;
   height: 100px;
-  box-shadow: 0 3px 14px 0 rgba(0, 0, 0, 0.75); }
+  box-shadow: 0 3px 14px 0 rgba(0, 0, 0, 0.75);
+  position: fixed;
+  top: 0; }
   header div.cp-nav-img {
     float: left;
     height: 100px; }
     header div.cp-nav-img img {
       height: 100%;
       width: auto;
-      padding: 12px 0; }
+      padding: 15px 0; }
   header div.cp-nav-links {
     float: right;
     height: 100px; }
@@ -52,7 +62,7 @@ header {
       margin: 0;
       height: 100px;
       width: auto;
-      padding: 0 8px; }
+      padding: 0 10px; }
       header div.cp-nav-links ul li {
         display: -ms-flexbox;
         display: flex;
@@ -60,10 +70,111 @@ header {
         justify-content: center;
         float: left;
         height: 100px;
-        min-width: 70px; }
+        padding: 0 15px; }
         header div.cp-nav-links ul li a {
           text-transform: uppercase;
           -ms-flex: 0 1 auto;
           flex: 0 1 auto;
           -ms-flex-item-align: center;
           align-self: center; }
+
+/*
+*   First Landing Section
+*/
+.cp-landing-section {
+  position: relative;
+  margin-top: 125px;
+  height: 400px;
+  overflow: hidden; }
+  .cp-landing-section img {
+    width: 100%;
+    height: auto; }
+  .cp-landing-section div.cp-landing-overlay {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    padding: 20px;
+    height: 100%;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.7); }
+
+/*
+*   About Section
+*/
+.cp-about-section div.cp-employee {
+  margin-bottom: 50px; }
+  .cp-about-section div.cp-employee .cp-about-img {
+    border: 1px solid transparent;
+    border-radius: 50%;
+    overflow: hidden; }
+    .cp-about-section div.cp-employee .cp-about-img img {
+      width: 100%;
+      height: auto; }
+  .cp-about-section div.cp-employee span {
+    text-align: center;
+    display: block;
+    font-family: "EB Garamond", serif; }
+    .cp-about-section div.cp-employee span.cp-about-name {
+      font-size: 1.484rem; }
+    .cp-about-section div.cp-employee span.cp-about-title {
+      font-size: 1rem;
+      font-weight: 600; }
+
+/*
+*   Paralax Price Section
+*/
+.cp-paralax-price-container {
+  background-image: url(images/paint.jpg);
+  background-size: cover;
+  background-position: top center;
+  background-attachment: fixed;
+  width: 100%; }
+  .cp-paralax-price-container div.cp-price {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid transparent;
+    padding: 35px;
+    border-radius: 12px;
+    margin-top: 150px;
+    margin-bottom: 150px; }
+    .cp-paralax-price-container div.cp-price p {
+      color: #333333; }
+    .cp-paralax-price-container div.cp-price h2 {
+      margin: 0; }
+
+/*
+*   Services Section
+*/
+.cp-services-section .cp-service > div {
+  border: 1px solid transparent;
+  border-radius: 4px;
+  height: 200px;
+  overflow: hidden; }
+  .cp-services-section .cp-service > div img {
+    width: 100%;
+    height: auto; }
+
+/*
+*   Contact Section
+*/
+.cp-contact-section .cp-contact-details span {
+  display: block; }
+
+.cp-contact-section form > div {
+  width: 100%;
+  margin: 10px 0; }
+  .cp-contact-section form > div > input {
+    width: 49%;
+    padding: 10px;
+    display: inline-block; }
+    .cp-contact-section form > div > input:first-child {
+      margin-right: 1%; }
+  .cp-contact-section form > div > textarea {
+    padding: 10px;
+    width: 100%;
+    height: 200px; }
+
+/*
+*   Footer
+*/
+footer {
+  height: 1000px; }
