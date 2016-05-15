@@ -66,6 +66,12 @@ body, html {
         margin-bottom: 0;
         color: $cp-primary;
     }
+    h3 {
+        font-size: $cp-font-size-lg;
+        font-family: $cp-font-title;
+        margin-bottom: 0;
+        color: $cp-primary;
+    }
     a, button {
         font-family: $cp-font-title;
         font-size: $cp-font-size-md;
@@ -311,10 +317,8 @@ $cp-service-img-height: 200px;
 *   Gallery Section
 */
 
-$cp-gallery-screen-height: 400px;
-$cp-gallery-tile-height: 150px;
-$cp-gallery-control-width: 60px;
-$cp-gallery-tile-width: 225px;
+$cp-gallery-screen-height: 600px;
+$cp-gallery-tile-height: 200px;
 
 .cp-gallery-section {
 
@@ -327,28 +331,13 @@ $cp-gallery-tile-width: 225px;
             object-fit: cover;
         }
     }
-    .cp-gallery-tiles-row {
-        height: $cp-gallery-tile-height;
-        padding: cp-spacing(3) $cp-gallery-control-width;
-        position: relative;
-        top: 0;
-        width: auto;
-        .cp-gallery-control {
-            position: absolute;
-            &.cp-right {
-                right: 0;
-            }
-            &.cp-left {
-                left: 0;
-            }
-        }
+    .cp-gallery-tiles {
+        max-height: $cp-gallery-tile-height * 2 + cp-spacing(10);
+        overflow: hidden;
         .cp-gallery-tile {
-            display: block;
-            float: left;
-            height: 100%;
-            width: $cp-gallery-tile-width;
             overflow: hidden;
-            margin: 0 cp-spacing(2);
+            height: $cp-gallery-tile-height;
+            margin-top: cp-spacing(5);
             > img {
                 width: 100%;
                 height: 100%;
@@ -356,6 +345,11 @@ $cp-gallery-tile-width: 225px;
             }
         }
     }
+    .cp-cta {
+        margin-left: calc(50% - 50px);
+        margin-top: cp-spacing(4);
+    }
+
 }
 
 
