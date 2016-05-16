@@ -29,14 +29,32 @@ var Chaney = {
     colorIndex: 0,
     $colorElem: $('.dripPath'),
     $slider: $('#screenSlider'),
-    $screen: $('.js-screen')
+    $screen: $('.js-screen'),
+    $screenTiles: $('.js-gallery-set'),
+    $screenBg: $('#galleryBg'),
+    $screenOverlay: $('#galleryOverlay')
 }
 
 $(function() {
 
     setInterval(updateColor,3000);
+    Chaney.$screenTiles.click(onTileClick);
 
 });
+
+function onTileClick(e) {
+    e.stopPropagation();
+    var $this = $(this);
+    $('.cp-active-set').removeClass('cp-active-set');
+    $this.addClass('cp-active-set');
+    var $imgs = $this.find('img');
+    var images = [];
+    $imgs.each(function() {
+        images.push($(this).attr('src'));
+    });
+    Chaney.$screenBg.attr('src', images[0]);
+    Chaney.$screenOverlay.attr('src', images[1]);
+};
 
 function updateColor()
 {
@@ -53,8 +71,6 @@ function updateStep() {
 };
 
 function moveScreen() {
-    console.log(this);
-    console.log(Chaney.$slider.val());
     Chaney.$screen.css('width', Chaney.$slider.val() + '%');
 };
 
