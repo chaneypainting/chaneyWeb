@@ -84,6 +84,9 @@ body, html {
         margin-top: $cp-section-top-margin;
     }
 }
+.dripPath {
+    transition: fill ease-in-out 2s;
+}
 .cp-cta {
     display: inline-block;
     margin: cp-spacing(1) 0;
@@ -111,6 +114,7 @@ body, html {
 */
 
 $cp-header-height: 100px;
+$cp-header-li-width: 110px;
 
 header {
     background-color: #ffffff;
@@ -123,7 +127,7 @@ header {
     div.cp-nav-img {
         float: left;
         height: $cp-header-height;
-        img {
+        svg {
             height: 100%;
             width: auto;
             padding: cp-spacing(3) 0;
@@ -142,11 +146,36 @@ header {
                 justify-content: center;
                 float: left;
                 height: $cp-header-height;
+                width: $cp-header-li-width;
                 padding: 0 cp-spacing(3);
+                position: relative;
+                overflow: hidden;
                 a {
                     text-transform: uppercase;
                     flex: 0 1 auto;
                     align-self: center;
+                    z-index: 200;
+                    transition: color .5s ease-in-out;
+                }
+                svg {
+                    width: $cp-header-li-width;
+                    height: auto;
+                    position: absolute;
+                    top: -266px;
+                    left: 0;
+                    transition: top .5s ease-in-out;
+                    overflow: visible;
+                }
+                &:hover {
+                    svg {
+                        transition: top .5s ease-in-out;
+                        top: -2px;
+                    }
+                    a {
+                        transition: color .5s ease-in-out;
+                        color: #ffffff;
+                        text-decoration: none;
+                    }
                 }
             }
         }
