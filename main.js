@@ -28,6 +28,8 @@ var Chaney = {
     })(),
     colorIndex: 0,
     $colorElem: $('.dripPath'),
+    $slider: $('#screenSlider'),
+    $screen: $('.js-screen')
 }
 
 $(function() {
@@ -48,7 +50,13 @@ function updateStep() {
     } else {
         Chaney.colorIndex++;
     }
-}
+};
+
+function moveScreen() {
+    console.log(this);
+    console.log(Chaney.$slider.val());
+    Chaney.$screen.css('width', Chaney.$slider.val() + '%');
+};
 
 
 
