@@ -247,7 +247,6 @@ header {
   max-height: 550px;
   overflow: hidden; }
   .cp-gallery-section .cp-gallery-tiles .cp-gallery-tile {
-    padding: 15px;
     overflow: hidden;
     height: 250px;
     margin-top: 25px;
@@ -257,8 +256,6 @@ header {
       width: 100%;
       height: 100%;
       object-fit: cover; }
-    .cp-gallery-section .cp-gallery-tiles .cp-gallery-tile.cp-active-set {
-      border-color: #004259; }
 
 .cp-gallery-section .cp-cta {
   margin-left: calc(50% - 50px);

@@ -362,7 +362,6 @@ $cp-gallery-tile-height: 250px;
         max-height: $cp-gallery-tile-height * 2 + cp-spacing(10);
         overflow: hidden;
         .cp-gallery-tile {
-            padding: 15px;
             overflow: hidden;
             height: $cp-gallery-tile-height;
             margin-top: cp-spacing(5);
@@ -372,9 +371,6 @@ $cp-gallery-tile-height: 250px;
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
-            }
-            &.cp-active-set {
-                border-color: $cp-primary;
             }
         }
     }
