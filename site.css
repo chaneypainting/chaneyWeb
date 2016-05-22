@@ -82,11 +82,15 @@ header {
   top: 0; }
   header div.cp-nav-img {
     float: left;
-    height: 100px; }
+    height: 100px;
+    padding: 15px 0; }
     header div.cp-nav-img svg {
       height: 100%;
-      width: auto;
-      padding: 15px 0; }
+      width: 80px; }
+    header div.cp-nav-img img {
+      vertical-align: top;
+      height: 100%;
+      width: auto; }
   header div.cp-nav-links {
     float: right;
     height: 100px; }
