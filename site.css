@@ -136,8 +136,7 @@ header {
 */
 .cp-landing-section {
   position: relative;
-  margin-top: 175px;
-  height: 400px;
+  height: 700px;
   overflow: hidden; }
   .cp-landing-section img {
     width: 100%;
@@ -149,7 +148,9 @@ header {
     padding: 20px;
     height: 100%;
     width: 300px;
-    background-color: rgba(255, 255, 255, 0.7); }
+    background-color: rgba(0, 0, 0, 0.7); }
+    .cp-landing-section div.cp-landing-overlay p {
+      color: #ffffff; }
 
 /*
 *   About Section
@@ -213,49 +214,19 @@ header {
 /*
 *   Gallery Section
 */
-.cp-gallery-section .cp-gallery-screen {
-  height: 600px;
-  position: relative;
-  overflow: hidden; }
-  .cp-gallery-section .cp-gallery-screen img {
-    height: auto;
-    width: 100vw; }
-  .cp-gallery-section .cp-gallery-screen .cp-gallery-screen-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 100%;
-    overflow: hidden; }
-  .cp-gallery-section .cp-gallery-screen input {
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    -webkit-appearance: none;
-    background-color: rgba(0, 0, 0, 0.7);
-    height: 20px; }
-    .cp-gallery-section .cp-gallery-screen input:active, .cp-gallery-section .cp-gallery-screen input:hover, .cp-gallery-section .cp-gallery-screen input:focus {
-      outline: none; }
-    .cp-gallery-section .cp-gallery-screen input::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      background-color: #dddddd;
-      opacity: 0.5;
-      width: 20px;
-      height: 20px; }
-
 .cp-gallery-section .cp-gallery-tiles {
   max-height: 550px;
   overflow: hidden; }
   .cp-gallery-section .cp-gallery-tiles .cp-gallery-tile {
     overflow: hidden;
     height: 250px;
-    margin-top: 25px;
-    border: 2px solid;
-    border-color: transparent; }
+    margin-top: 25px; }
     .cp-gallery-section .cp-gallery-tiles .cp-gallery-tile > img {
       width: 100%;
       height: 100%;
-      object-fit: cover; }
+      object-fit: cover;
+      border: 1px solid transparent;
+      border-radius: 4px; }
 
 .cp-gallery-section .cp-cta {
   margin-left: calc(50% - 50px);
