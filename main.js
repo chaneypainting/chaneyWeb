@@ -10,21 +10,11 @@ var Chaney = {
     colors: (function() {
         return new Array(
         '#00aeef', // Starting Blue
-        '#0b72db',
-        '#3251c6',
-        '#6f3bad',
-        '#9c2299', // Purple
-        '#c80580',
-        '#d40a56',
-        '#d4103e', // Red
-        '#d61f20', // Red
-        '#d83f1d',
-        '#dc6717',
-        '#dd9d17',
-        '#dec419',
-        '#7cc22b',
-        '#24bc62',
-        '#0dacbb');
+        // '#B800EF', // Purple
+        // '#EF4000', // Red
+        '#65C449', // Green
+        '#E8812C') // Oarnge
+
     })(),
     colorIndex: 0,
     $colorElem: $('.dripPath'),
@@ -32,7 +22,7 @@ var Chaney = {
 
 $(function() {
 
-    setInterval(updateColor,3000);
+    setInterval(updateColor,5000);
 
 });
 
