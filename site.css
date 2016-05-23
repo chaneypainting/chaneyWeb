@@ -51,15 +51,27 @@
   .cp-icon-facebook:before {
     content: "\e903"; }
 
-.vp-icon-youtube {
+.cp-icon-youtube {
   color: #cd201f !important; }
-  .vp-icon-youtube:before {
+  .cp-icon-youtube:before {
     content: "\e904"; }
 
-.vp-icon-linkedin {
+.cp-icon-linkedin {
   color: #0077B5 !important; }
-  .vp-icon-linkedin:before {
+  .cp-icon-linkedin:before {
     content: "\e905"; }
+
+.cp-icon-phone:before {
+  content: "\e912"; }
+
+.cp-icon-email:before {
+  content: "\e915"; }
+
+.cp-icon-office:before {
+  content: "\e913"; }
+
+.cp-icon-license:before {
+  content: "\e914"; }
 
 /*
 *   Global Variables
@@ -92,7 +104,8 @@ body, html {
     font-size: 1rem; }
   body p, html p {
     color: #333333;
-    line-height: 1.7em; }
+    line-height: 1.7em;
+    margin: 15px 0; }
   body section, html section {
     margin-top: 75px; }
 
@@ -291,28 +304,38 @@ header {
 *   Contact Section
 */
 .cp-contact-section .cp-contact-details {
-  padding-top: 20px;
-  margin-top: 20px;
-  border-top: 2px solid #dddddd; }
-  .cp-contact-section .cp-contact-details span {
+  margin-top: 20px; }
+  .cp-contact-section .cp-contact-details > div {
+    margin: 10px 0;
     display: block; }
+    .cp-contact-section .cp-contact-details > div > span:not(.cp-contact-lic) {
+      color: #333333 !important;
+      margin-right: 5px; }
+    .cp-contact-section .cp-contact-details > div a, .cp-contact-section .cp-contact-details > div span, .cp-contact-section .cp-contact-details > div .cp-contact-lic {
+      color: #7F878A;
+      font-size: 1rem; }
+    .cp-contact-section .cp-contact-details > div .cp-contact-address {
+      display: block;
+      margin-left: 25px; }
 
-.cp-contact-section form > div {
-  width: 100%;
-  margin: 10px 0; }
-  .cp-contact-section form > div > input, .cp-contact-section form > div textarea {
-    border: 2px solid #dddddd;
-    border-radius: 4px; }
-  .cp-contact-section form > div > input {
-    width: 49%;
-    padding: 10px;
-    display: inline-block; }
-    .cp-contact-section form > div > input:first-child {
-      margin-right: 1%; }
-  .cp-contact-section form > div > textarea {
-    padding: 10px;
+.cp-contact-section form {
+  margin-top: 15px; }
+  .cp-contact-section form > div {
     width: 100%;
-    height: 200px; }
+    margin: 10px 0; }
+    .cp-contact-section form > div > input, .cp-contact-section form > div textarea {
+      border: 2px solid #dddddd;
+      border-radius: 4px; }
+    .cp-contact-section form > div > input {
+      width: 49%;
+      padding: 10px;
+      display: inline-block; }
+      .cp-contact-section form > div > input:first-child {
+        margin-right: 1%; }
+    .cp-contact-section form > div > textarea {
+      padding: 10px;
+      width: 100%;
+      height: 200px; }
 
 /*
 *   Footer

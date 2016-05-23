@@ -66,19 +66,36 @@
     }
 }
 
-.vp-icon-youtube {
+.cp-icon-youtube {
     color: #cd201f !important;
     &:before {
         content: "\e904";
     }
 }
 
-.vp-icon-linkedin {
+.cp-icon-linkedin {
     color: #0077B5 !important;
     &:before {
         content: "\e905";
     }
 }
+
+.cp-icon-phone:before {
+    content: "\e912";
+}
+
+.cp-icon-email:before {
+    content: "\e915";
+}
+
+.cp-icon-office:before {
+    content: "\e913";
+}
+
+.cp-icon-license:before {
+    content: "\e914";
+}
+
 
 /*
 *   Global Variables
@@ -152,6 +169,7 @@ body, html {
     p {
         color: $cp-charcoal;
         line-height: 1.7em;
+        margin: cp-spacing(3) 0;
     }
     section {
         margin-top: $cp-section-top-margin;
@@ -432,15 +450,29 @@ $cp-gallery-tile-height: 250px;
 .cp-contact-section {
 
     .cp-contact-details {
-        padding-top: cp-spacing(4);
         margin-top: cp-spacing(4);
-        border-top: 2px solid $cp-offwhite;
-        span {
+        > div {
+
+            margin: cp-spacing(2) 0;
             display: block;
+
+            > span:not(.cp-contact-lic) {
+                color: $cp-charcoal !important;
+                margin-right: cp-spacing(1);
+            }
+            a, span, .cp-contact-lic {
+                color: $cp-grey;
+                font-size: $cp-font-size-md;
+            }
+            .cp-contact-address {
+                display: block;
+                margin-left: 25px;
+            }
         }
     }
 
     form {
+        margin-top: cp-spacing(3);
         > div {
             width: 100%;
             margin: cp-spacing(2) 0;
