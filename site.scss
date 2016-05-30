@@ -256,6 +256,9 @@ header {
                     z-index: 200;
                     transition: color .5s ease-in-out;
                     color: $cp-grey;
+					&:hover {
+						cursor: pointer;
+					}
                 }
                 svg {
                     width: $cp-header-li-width;

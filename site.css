@@ -183,6 +183,8 @@ header {
           z-index: 200;
           transition: color .5s ease-in-out;
           color: #7F878A; }
+          header div.cp-nav-links ul li a:hover {
+            cursor: pointer; }
         header div.cp-nav-links ul li svg {
           width: 110px;
           height: auto;

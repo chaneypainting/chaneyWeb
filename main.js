@@ -18,9 +18,16 @@ var Chaney = {
     })(),
     colorIndex: 0,
     $colorElem: $('.dripPath'),
+    $gallery: $('.cp-gallery-tiles'),
+    galleryClosedHeight: null,
+    galleryOpenHeight: null,
+    $galleryButton: $('.cp-gallery-tiles ~ button')
 }
 
 $(function() {
+
+    Chaney.galleryClosedHeight = Chaney.$gallery.css('maxHeight');
+    Chaney.galleryOpenHeight = Chaney.$gallery.children().first().innerHeight();
 
     $('[data-goto]').click(gotoElem);
 
@@ -52,6 +59,28 @@ function gotoElem(e) {
     $("html, body").animate({
         scrollTop: targetPosition
     }, 1000);
+
+}
+
+function toggleGallery() {
+
+    var newHeight;
+
+    if (Chaney.$gallery.css('maxHeight') == Chaney.galleryClosedHeight) {
+
+        newHeight = Chaney.galleryOpenHeight;
+        Chaney.$galleryButton.html('View Less');
+
+    } else {
+
+        newHeight = Chaney.galleryClosedHeight;
+        Chaney.$galleryButton.html('View More');
+
+    }
+
+    Chaney.$gallery.animate({
+        maxHeight: newHeight
+    }, 800);
 
 }
 
