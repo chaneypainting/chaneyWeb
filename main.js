@@ -22,7 +22,10 @@ var Chaney = {
 
 $(function() {
 
+    $('[data-goto]').click(gotoElem);
+
     setInterval(updateColor,5000);
+
 
 });
 
@@ -40,7 +43,17 @@ function updateStep() {
     }
 };
 
+function gotoElem(e) {
 
+    var $this = $(this);
+    var $targetElem = $('#' + $this.data('goto'));
+    var targetPosition = $targetElem.offset().top - 100;
+
+    $("html, body").animate({
+        scrollTop: targetPosition
+    }, 1000);
+
+}
 
 
 
