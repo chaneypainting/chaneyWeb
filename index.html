@@ -143,7 +143,7 @@
                         luctus vel. Duis sapien purus, hendrerit non varius vel, faucibus ut sapien. Donec
                         bibendum vel ipsum id ultricies.
                     </p>
-                    <a class="cp-cta">Contact Us</a>
+                    <a class="cp-cta" data-goto="contact">Contact Us</a>
                 </div>
             </div>
         </div>
@@ -176,7 +176,7 @@
                         luctus vel. Duis sapien purus, hendrerit non varius vel, faucibus ut sapien. Donec
                         bibendum vel ipsum id ultricies.
                     </p>
-                    <a class="cp-cta">Learn More</a>
+                    <a class="cp-cta" data-goto="contact">Learn More</a>
                 </div>
                 <div class="col-md-4 cp-service">
                     <div>
@@ -190,7 +190,7 @@
                         luctus vel. Duis sapien purus, hendrerit non varius vel, faucibus ut sapien. Donec
                         bibendum vel ipsum id ultricies.
                     </p>
-                    <a class="cp-cta">Learn More</a>
+                    <a class="cp-cta" data-goto="contact">Learn More</a>
                 </div>
                 <div class="col-md-4 cp-service">
                     <div>
@@ -204,7 +204,7 @@
                         luctus vel. Duis sapien purus, hendrerit non varius vel, faucibus ut sapien. Donec
                         bibendum vel ipsum id ultricies.
                     </p>
-                    <a class="cp-cta">Learn More</a>
+                    <a class="cp-cta" data-goto="contact">Learn More</a>
                 </div>
             </div>
         </section>
@@ -299,24 +299,24 @@
                     </div>
                 </div>
                 <div class="col-md-8">
-                    <form>
+                    <form class="cp-contact-form">
                         <div>
-                            <input placeholder="First Name" />
-                            <input placeholder="Last Name" />
+                            <input placeholder="First Name" name="firstName" />
+                            <input placeholder="Last Name" name="lastName" />
                         </div>
                         <div>
-                            <input placeholder="Phone" />
-                            <input placeholder="Email" />
+                            <input placeholder="Phone" name="phone" />
+                            <input placeholder="Email" name="email" />
                         </div>
                         <div>
-                            <input placeholder="Service Needed" />
-                            <input placeholder="Location" />
+                            <input placeholder="Service Needed" name="subject" />
+                            <input placeholder="Location" name="location" />
                         </div>
                         <div>
-                            <textarea placeholder="Please tell us what you need"></textarea>
+                            <textarea placeholder="Please tell us what you need" name="message"></textarea>
                         </div>
                     </form>
-                    <button class="cp-cta">Send</button>
+                    <button class="cp-cta" onclick="submitContactForm()">Send</button>
                 </div>
             </div>
         </section>

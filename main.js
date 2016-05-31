@@ -21,7 +21,8 @@ var Chaney = {
     $gallery: $('.cp-gallery-tiles'),
     galleryClosedHeight: null,
     galleryOpenHeight: null,
-    $galleryButton: $('.cp-gallery-tiles ~ button')
+    $galleryButton: $('.cp-gallery-tiles ~ button'),
+    $contactForm: $('.cp-contact-form')
 }
 
 $(function() {
@@ -81,6 +82,23 @@ function toggleGallery() {
     Chaney.$gallery.animate({
         maxHeight: newHeight
     }, 800);
+
+}
+
+
+function submitContactForm() {
+
+    var formData = Chaney.$contactForm.serialize();
+
+
+    console.log(formData);
+
+    // Submit the form using AJAX.
+    $.ajax({
+        type: 'POST',
+        url: 'email.php',
+        data: formData
+    });
 
 }
 
