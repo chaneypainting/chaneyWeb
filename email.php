@@ -10,10 +10,13 @@
         $name = strip_tags(trim($name));
 		$name = str_replace(array("\r","\n"),array(" "," "),$name);
         $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
+        $location = strip_tags(trim($_POST["location"]));
+        $service = strip_tags(trim($_POST["service"]));
+        $date = date('m/d/Y h:i:s a', time());
         $message = trim($_POST["message"]);
 
         // Check that data was sent to the mailer.
-        if ( empty($name) OR empty($message) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        if (empty($name) OR empty($message) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
             // Set a 400 (bad request) response code and exit.
             http_response_code(400);
             echo "Oops! There was a problem with your submission. Please complete the form and try again.";
@@ -32,9 +35,21 @@
 
         $mail->SetFrom($email, 'Web App');
         $mail->Subject = "Website Contact From $name";
-        $mail->Body = "Name: $name\n Email: $email\n\n Message:\n$message\n";
-        $mail->AddAddress('piercechaneypainting@gmail.com', 'Pierce Chaney');
+        // $mail->AddAddress('piercechaneypainting@gmail.com', 'Pierce Chaney');
         $mail->AddAddress(getenv("SMTP_USER"));
+
+        $message_body = <<<EOD
+            Name: $name
+            Email: $email
+            Time: $date
+            Service: $Service
+            Location: $location
+
+            Message:
+            $message
+        EOD;
+
+        $mail->Body = $message_body;
 
         // Send the email.
         if ($mail->Send()) {
