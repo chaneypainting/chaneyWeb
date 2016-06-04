@@ -24,7 +24,6 @@
 
         $mail->IsSMTP();
         $mail->SMTPDebug = 2;
-        $mail->Debugoutput = 'html';
         $mail->SMTPAuth = true;
         $mail->Host = "smtp.gmail.com";
         $mail->Port = 587;
@@ -33,10 +32,9 @@
 
         $mail->SetFrom($email, 'Web App');
         $mail->Subject = "Website Contact From $name";
-        # $mail->Body = "Name: $name\n Email: $email\n\n Message:\n$message\n";
-        $mail->Body = "THis is my body";
-        $mail->AddAddress('ray.krow@yahoo.com', 'Ray Krow');
-        $mail->AddAddress('krowhouse@gmail.com');
+        $mail->Body = "Name: $name\n Email: $email\n\n Message:\n$message\n";
+        $mail->AddAddress('piercechaneypainting@gmail.com', 'Pierce Chaney');
+        $mail->AddAddress(getenv("SMTP_USER"));
 
         // Send the email.
         if ($mail->Send()) {
