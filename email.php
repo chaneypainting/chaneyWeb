@@ -1,5 +1,8 @@
 <?php
 
+    require_once('class.smtp.php');
+    require_once('class.phpmailer.php');
+
     // Only process POST reqeusts.
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Get the form fields and remove whitespace.
@@ -17,22 +20,26 @@
             exit;
         }
 
-        // Set the recipient email address.
-        $recipient = "ray.krow@yahoo.com";
+        $mail = new PHPMailer();
 
-        // Set the email subject.
-        $subject = "Website Contact From $name";
+        $mail->IsSMTP();
+        $mail->SMTPDebug = 2;
+        $mail->Debugoutput = 'html';
+        $mail->SMTPAuth = true;
+        $mail->Host = "smtp.gmail.com";
+        $mail->Port = 587;
+        $mail->Username = getenv("SMTP_USER");
+        $mail->Password = getenv("SMTP_PASS");
 
-        // Build the email content.
-        $email_content = "Name: $name\n";
-        $email_content .= "Email: $email\n\n";
-        $email_content .= "Message:\n$message\n";
-
-        // Build the email headers.
-        $email_headers = "From: $name <$email>";
+        $mail->SetFrom($email, 'Web App');
+        $mail->Subject = "Website Contact From $name";
+        # $mail->Body = "Name: $name\n Email: $email\n\n Message:\n$message\n";
+        $mail->Body = "THis is my body";
+        $mail->AddAddress('ray.krow@yahoo.com', 'Ray Krow');
+        $mail->AddAddress('krowhouse@gmail.com');
 
         // Send the email.
-        if (mail($recipient, $subject, $email_content, $email_headers)) {
+        if ($mail->Send()) {
             // Set a 200 (okay) response code.
             http_response_code(200);
             echo "Thank You! Your message has been sent.";
@@ -41,7 +48,7 @@
             http_response_code(500);
             // echo "Oops! Something went wrong and we couldn't send your message.";
             // DEV
-            echo "mail($recipient, $subject, $email_content, $email_headers) func failed";
+            echo "mail->send failed" . $mail->ErrorInfo;
         }
 
     } else {
