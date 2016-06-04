@@ -41,7 +41,7 @@
             http_response_code(500);
             // echo "Oops! Something went wrong and we couldn't send your message.";
             // DEV
-            echo "mail() func failed";
+            echo "mail($recipient, $subject, $email_content, $email_headers) func failed";
         }
 
     } else {
