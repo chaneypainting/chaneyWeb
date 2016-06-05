@@ -3,6 +3,8 @@
     require_once('class.smtp.php');
     require_once('class.phpmailer.php');
 
+    date_default_timezone_set('America/Los_Angeles');
+
     // Only process POST reqeusts.
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Get the form fields and remove whitespace.
@@ -35,19 +37,19 @@
 
         $mail->SetFrom($email, 'ChaneyPainting.com');
         $mail->Subject = "Website Contact From $name";
-        // $mail->AddAddress('piercechaneypainting@gmail.com', 'Pierce Chaney');
+        $mail->AddAddress('piercechaneypainting@gmail.com', 'Pierce Chaney');
         $mail->AddAddress(getenv("SMTP_USER"));
 
-        $message_body = <<<EOD
-            Name: $name
-            Email: $email
-            Time: $date
-            Service: $service
-            Location: $location
+        $message_body = "
+            Name: $name \n
+            Email: $email \n
+            Time: $date \n
+            Service: $service \n
+            Location: $location \n\n
 
-            Message:
-            $message
-        EOD;
+            Message: \n
+            $message \n
+        ";
 
         $mail->Body = $message_body;
 
@@ -59,9 +61,9 @@
         } else {
             // Set a 500 (internal server error) response code.
             http_response_code(500);
-            // echo "Oops! Something went wrong and we couldn't send your message.";
+            echo "Oops! Something went wrong and we couldn't send your message.";
             // DEV
-            echo "mail->send failed" . $mail->ErrorInfo;
+            // echo "mail->send failed" . $mail->ErrorInfo;
         }
 
     } else {
