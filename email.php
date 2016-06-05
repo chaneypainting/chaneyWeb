@@ -8,10 +8,10 @@
     // Only process POST reqeusts.
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Get the form fields and remove whitespace.
-        $name = $_POST["firstName"] . " " . $_POST["lastName"];
-        $name = strip_tags(trim($name));
+        $name = strip_tags(trim($_POST["name"]));
 		$name = str_replace(array("\r","\n"),array(" "," "),$name);
         $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
+        $phone = strip_tags(trim($_POST["phone"]));
         $date = date('m/d/Y h:i:s a', time());
         $message = trim($_POST["message"]);
 
@@ -42,6 +42,7 @@
             Name: $name \n
             Email: $email \n
             Time: $date \n
+            Phone: $phone \n
 
             Message: \n
             $message \n
