@@ -25,20 +25,24 @@
             </div>
         </header>
 
+        <div class="cp-header-normalizer"></div>
 
         <!-- First Landing Section -->
         <section class="cp-landing-section">
             <div class="row">
                 <div class="col-md-12">
-                    <img src="images/paint.jpg" />
-                </div>
-                <div class="cp-landing-overlay">
-                    <h1>Chaney Painting</h1>
-                    <blockquote>
-                        "The best experience I've ever had while having my home painted."
-                    </blockquote>
-                    <a class="cp-cta">Learn More</a>
-                    <a class="cp-cta">Contact Us</a>
+
+                    <div class="cp-landing-content">
+                        <h1>Chaney Painting</h1>
+                        <blockquote>
+                            "The best experience I've ever had while having my home painted."
+                        </blockquote>
+                        <div>
+                            <a class="cp-cta-on-dark" data-goto="about">Learn More</a>
+                            <a class="cp-cta-on-dark" data-goto="contact">Contact Us</a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -268,21 +272,20 @@
                 <div class="col-md-6">
                     <form class="cp-contact-form">
                         <div>
-                            <input placeholder="First Name" name="firstName" />
-                            <!-- <input placeholder="Last Name" name="lastName" /> -->
+                            <label>Name</label>
+                            <input name="First and Last" />
                         </div>
                         <div>
-                            <input placeholder="Phone" name="phone" />
+                            <label>Phone</label>
+                            <input name="phone" />
                         </div>
                         <div>
-                            <input placeholder="Email" name="email" />
+                            <label>Email</label>
+                            <input name="email" />
                         </div>
-                        <!-- <div>
-                            <input placeholder="Service Needed" name="service" />
-                            <input placeholder="Location" name="location" />
-                        </div> -->
                         <div>
-                            <textarea placeholder="Please tell us what you need" name="message"></textarea>
+                            <label>Message</label>
+                            <textarea name="message"></textarea>
                         </div>
                     </form>
                     <button class="cp-cta" onclick="submitContactForm()">Send</button>

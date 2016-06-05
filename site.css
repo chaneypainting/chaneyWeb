@@ -133,6 +133,24 @@ body, html {
   .cp-cta:hover, .cp-cta:active {
     outline: none; }
 
+.cp-cta-on-dark {
+  display: inline-block;
+  margin: 5px 0;
+  padding: 5px 10px;
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  outline: none;
+  transition: background-color .2s ease-in-out; }
+  .cp-cta-on-dark:hover {
+    text-decoration: none;
+    cursor: pointer;
+    color: #004259;
+    transition: background-color .2s ease-in-out;
+    background-color: #ffffff; }
+  .cp-cta-on-dark:hover, .cp-cta-on-dark:active {
+    outline: none; }
+
 /*
 *   Header
 */
@@ -181,42 +199,50 @@ header {
           color: #7F878A; }
           header div.cp-nav-links ul li a:hover {
             cursor: pointer; }
-        header div.cp-nav-links ul li svg {
-          width: 110px;
-          height: auto;
-          position: absolute;
-          top: -266px;
-          left: 0;
-          transition: top .5s ease-in-out;
-          overflow: visible; }
-        header div.cp-nav-links ul li:hover svg {
-          transition: top .5s ease-in-out;
-          top: -2px; }
         header div.cp-nav-links ul li:hover a {
           transition: color .5s ease-in-out;
           color: #004259;
           text-decoration: none; }
 
 /*
+*	Spacer that starts body below fixed header
+*/
+div.cp-header-normalizer {
+  height: 80px;
+  width: 100%; }
+
+/*
 *   First Landing Section
 */
 .cp-landing-section {
-  position: relative;
-  height: 700px;
-  overflow: hidden; }
-  .cp-landing-section img {
-    width: 100%;
-    height: auto; }
-  .cp-landing-section div.cp-landing-overlay {
-    position: absolute;
-    top: 0;
-    right: 15px;
-    padding: 20px;
-    height: 100%;
-    width: 300px;
-    background-color: rgba(0, 0, 0, 0.7); }
-    .cp-landing-section div.cp-landing-overlay p {
-      color: #ffffff; }
+  height: 500px;
+  overflow: hidden;
+  margin-top: 0;
+  background-image: url(images/paint.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+  .cp-landing-section div.cp-landing-content {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 150px;
+    color: #fff; }
+    .cp-landing-section div.cp-landing-content h1 {
+      margin: 0; }
+    .cp-landing-section div.cp-landing-content blockquote {
+      margin: 0;
+      margin-top: 20px;
+      margin-bottom: 15px;
+      padding-left: 20px;
+      border-left: 6px solid #ffffff; }
+    .cp-landing-section div.cp-landing-content a {
+      margin: 10px; }
 
 /*
 *   About Section

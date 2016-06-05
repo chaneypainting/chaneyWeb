@@ -204,6 +204,28 @@ body, html {
     }
 }
 
+.cp-cta-on-dark {
+    display: inline-block;
+    margin: cp-spacing(1) 0;
+    padding: cp-spacing(1) cp-spacing(2);
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    outline: none;
+    transition: background-color .2s ease-in-out;
+    &:hover {
+        text-decoration: none;
+        cursor: pointer;
+        color: $cp-primary;
+        transition: background-color .2s ease-in-out;
+        background-color: #ffffff;
+    }
+    &:hover,
+    &:active {
+        outline: none;
+    }
+}
+
 /*
 *   Header
 */
@@ -261,20 +283,7 @@ header {
 						cursor: pointer;
 					}
                 }
-                svg {
-                    width: $cp-header-li-width;
-                    height: auto;
-                    position: absolute;
-                    top: -266px;
-                    left: 0;
-                    transition: top .5s ease-in-out;
-                    overflow: visible;
-                }
                 &:hover {
-                    svg {
-                        transition: top .5s ease-in-out;
-                        top: -2px;
-                    }
                     a {
                         transition: color .5s ease-in-out;
                         // color: #ffffff;
@@ -288,32 +297,54 @@ header {
 }
 
 /*
+*	Spacer that starts body below fixed header
+*/
+div.cp-header-normalizer {
+	height: $cp-header-height;
+	width: 100%;
+}
+
+/*
 *   First Landing Section
 */
 
-$cp-landing-section-height: 700px;
-$cp-landing-overlay-width: 300px;
-
 .cp-landing-section {
-    position: relative;
-    // margin-top: $cp-header-height + $cp-section-top-margin;
-    height: $cp-landing-section-height;
+
+    height: 500px;
     overflow: hidden;
-    img {
-        width: 100%;
-        height: auto;
-    }
-    div.cp-landing-overlay {
-        position: absolute;
-        top: 0;
-        right: $cp-bs-space;
-        padding: cp-spacing(4);
-        height: 100%;
-        width: $cp-landing-overlay-width;
-        background-color: $cp-overlay-dark;
-        p {
-            color: #ffffff;
-        }
+	margin-top: 0;
+
+	background-image: url(images/paint.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+
+    div.cp-landing-content {
+
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		width: 400px;
+		margin: 0 auto;
+		margin-top: 150px;
+		color: #fff;
+
+		h1 {
+			margin: 0;
+		}
+
+		blockquote {
+			margin: 0;
+			margin-top: cp-spacing(4);
+			margin-bottom: cp-spacing(3);
+			padding-left: 20px;
+			border-left: 6px solid #ffffff;
+		}
+
+		a {
+			margin: cp-spacing(2);
+		}
+
     }
 }
 
