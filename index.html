@@ -129,18 +129,6 @@
 
         <!-- Services Section -->
         <section class="container cp-services-section" id="services">
-            <!-- <h2>Services</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <p>
-                        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus
-                        mus. Phasellus posuere nulla quis tempus egestas. Vivamus et turpis vel risus
-                        tempor posuere eu eu mi. Pellentesque sodales libero nisl, sit amet sagittis massa
-                        luctus vel. Duis sapien purus, hendrerit non varius vel, faucibus ut sapien. Donec
-                        bibendum vel ipsum id ultricies.
-                    </p>
-                </div>
-            </div> -->
             <div class="row">
                 <div class="col-md-4 cp-service">
                     <div>
@@ -247,6 +235,7 @@
             <h2>Contact</h2>
             <div class="row">
                 <div class="col-md-6">
+
                     <p>
                         Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus
                         mus. Phasellus posuere nulla quis tempus egestas. Vivamus et turpis vel risus
@@ -254,6 +243,36 @@
                         luctus vel. Duis sapien purus, hendrerit non varius vel, faucibus ut sapien. Donec
                         bibendum vel ipsum id ultricies.
                     </p>
+
+                    <form class="cp-contact-form">
+                        <div>
+                            <label>Name</label>
+                            <input name="name" />
+                        </div>
+                        <div>
+                            <label>Phone</label>
+                            <input name="phone" />
+                        </div>
+                        <div>
+                            <label>Email</label>
+                            <input name="email" />
+                        </div>
+                        <div>
+                            <label>Message</label>
+                            <textarea name="message"></textarea>
+                        </div>
+                    </form>
+
+                    <button class="cp-cta" onclick="submitContactForm()">Send</button>
+
+                </div>
+
+                <div class="col-md-6 cp-contact-col-right">
+
+                    <div>
+                        <img src="images/logo.jpg" />
+                    </div>
+
                     <div class="cp-contact-details">
                         <div>
                             <span class="cp-icon-phone"></span>
@@ -275,27 +294,15 @@
                             </a>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <form class="cp-contact-form">
-                        <div>
-                            <label>Name</label>
-                            <input name="name" />
-                        </div>
-                        <div>
-                            <label>Phone</label>
-                            <input name="phone" />
-                        </div>
-                        <div>
-                            <label>Email</label>
-                            <input name="email" />
-                        </div>
-                        <div>
-                            <label>Message</label>
-                            <textarea name="message"></textarea>
-                        </div>
-                    </form>
-                    <button class="cp-cta" onclick="submitContactForm()">Send</button>
+
+                    <div class="cp-social">
+                        <a href="#"><span class="cp-icon-google"></span></a>
+                        <a href="#"><span class="cp-icon-twitter"></span></a>
+                        <a href="#"><span class="cp-icon-facebook"></span></a>
+                        <a href="#"><span class="cp-icon-facebook"></span></a>
+                        <a href="#"><span class="cp-icon-pintrist"></span></a>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -303,25 +310,7 @@
 
         <!-- Footer -->
         <footer>
-            <div>
-                <svg>
-                    <polygon points="2.42 32.25 18.88 48.36 33.96 32.96 34 0 2.42 32.25" style="fill:#a29588"/>
-                    <polygon points="0 34.73 72.87 106.07 40.01 106.13 0.34 67.29 0 34.73" style="fill:#004259"/>
-                    <polygon points="58.55 87.2 74.8 70.59 75.3 103.59 58.55 87.2" style="fill:#775e53"/>
-                    <polygon points="78.7 43.57 79.3 99.77 98.74 79.92 98.56 63.04 78.7 43.57" style="fill:#004259"/>
-                    <path class="dripPath" fill="#00aeef" d="M68,46.28a59.43,59.43,0,0,0-6.2-7.76c-5.59-6.46-9.47-20.44-9.47-20.44S51.11,32.7,46.82,39.92c-1.23,2.07-2.6,4.28-3.7,6.47A14.75,14.75,0,1,0,68,46.28Z"/>
-                </svg>
-            </div>
-            <div class="cp-footer-social">
-                <a href="#"><span class="cp-icon-google"></span></a>
-                <a href="#"><span class="cp-icon-twitter"></span></a>
-                <a href="#"><span class="cp-icon-facebook"></span></a>
-                <a href="#"><span class="cp-icon-facebook"></span></a>
-                <a href="#"><span class="cp-icon-pintrist"></span></a>
-            </div>
-            <div class="cp-footer-copy">
-                <span>&copy; Chaney Painting 2016</span>
-            </div>
+            <span>&copy; Chaney Painting 2016</span>
         </footer>
 
 
