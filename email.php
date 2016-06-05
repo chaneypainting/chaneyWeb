@@ -33,7 +33,7 @@
         $mail->Username = getenv("SMTP_USER");
         $mail->Password = getenv("SMTP_PASS");
 
-        $mail->SetFrom($email, 'Web App');
+        $mail->SetFrom($email, 'ChaneyPainting.com');
         $mail->Subject = "Website Contact From $name";
         // $mail->AddAddress('piercechaneypainting@gmail.com', 'Pierce Chaney');
         $mail->AddAddress(getenv("SMTP_USER"));
@@ -42,7 +42,7 @@
             Name: $name
             Email: $email
             Time: $date
-            Service: $Service
+            Service: $service
             Location: $location
 
             Message:
