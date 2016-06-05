@@ -484,12 +484,13 @@ $cp-gallery-tile-height: 250px;
                 border-radius: 4px;
             }
             > input {
-                width: 49%;
+                // width: 49%;
+				width: 100%;
                 padding: cp-spacing(2);
                 display: inline-block;
-                &:first-child {
-                    margin-right: 1%;
-                }
+                // &:first-child {
+                //     margin-right: 1%;
+                // }
             }
             > textarea {
                 padding: cp-spacing(2);

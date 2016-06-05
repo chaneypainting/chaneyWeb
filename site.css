@@ -329,11 +329,9 @@ header {
       border: 2px solid #dddddd;
       border-radius: 4px; }
     .cp-contact-section form > div > input {
-      width: 49%;
+      width: 100%;
       padding: 10px;
       display: inline-block; }
-      .cp-contact-section form > div > input:first-child {
-        margin-right: 1%; }
     .cp-contact-section form > div > textarea {
       padding: 10px;
       width: 100%;
