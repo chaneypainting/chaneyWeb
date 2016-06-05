@@ -398,6 +398,8 @@ div.cp-header-normalizer {
     margin: 0 5px; }
     .cp-contact-section .cp-contact-col-right .cp-social a span {
       font-size: 2rem; }
+    .cp-contact-section .cp-contact-col-right .cp-social a:hover, .cp-contact-section .cp-contact-col-right .cp-social a:active, .cp-contact-section .cp-contact-col-right .cp-social a:focus {
+      text-decoration: none; }
 
 /*
 *   Footer

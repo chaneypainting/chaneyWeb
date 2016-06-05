@@ -581,6 +581,11 @@ $cp-gallery-tile-height: 250px;
 			span {
 				font-size: $cp-font-size-xl;
 			}
+			&:hover,
+			&:active,
+			&:focus {
+				text-decoration: none;
+			}
 		}
 	}
 }
