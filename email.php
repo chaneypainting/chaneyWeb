@@ -12,8 +12,6 @@
         $name = strip_tags(trim($name));
 		$name = str_replace(array("\r","\n"),array(" "," "),$name);
         $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
-        $location = strip_tags(trim($_POST["location"]));
-        $service = strip_tags(trim($_POST["service"]));
         $date = date('m/d/Y h:i:s a', time());
         $message = trim($_POST["message"]);
 
@@ -44,8 +42,6 @@
             Name: $name \n
             Email: $email \n
             Time: $date \n
-            Service: $service \n
-            Location: $location \n\n
 
             Message: \n
             $message \n
