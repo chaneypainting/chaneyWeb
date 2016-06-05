@@ -140,27 +140,23 @@ header {
   background-color: #ffffff;
   z-index: 100;
   width: 100%;
-  height: 100px;
+  height: 80px;
   box-shadow: 0 3px 14px 0 rgba(0, 0, 0, 0.75);
   position: fixed;
   top: 0; }
   header div.cp-nav-img {
     float: left;
-    height: 100px;
+    height: 80px;
     padding: 15px 0; }
-    header div.cp-nav-img svg {
-      height: 100%;
-      width: 80px; }
     header div.cp-nav-img img {
-      vertical-align: top;
       height: 100%;
       width: auto; }
   header div.cp-nav-links {
     float: right;
-    height: 100px; }
+    height: 80px; }
     header div.cp-nav-links ul {
       margin: 0;
-      height: 100px;
+      height: 80px;
       width: auto;
       padding: 0 10px; }
       header div.cp-nav-links ul li {
@@ -169,7 +165,7 @@ header {
         -ms-flex-pack: center;
         justify-content: center;
         float: left;
-        height: 100px;
+        height: 80px;
         width: 110px;
         padding: 0 15px;
         position: relative;
@@ -198,7 +194,7 @@ header {
           top: -2px; }
         header div.cp-nav-links ul li:hover a {
           transition: color .5s ease-in-out;
-          color: #ffffff;
+          color: #004259;
           text-decoration: none; }
 
 /*

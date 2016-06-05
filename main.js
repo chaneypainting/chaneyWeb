@@ -32,7 +32,7 @@ $(function() {
 
     $('[data-goto]').click(gotoElem);
 
-    setInterval(updateColor,5000);
+    // setInterval(updateColor,5000);
 
 
 });

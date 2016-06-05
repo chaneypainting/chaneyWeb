@@ -122,6 +122,7 @@ $cp-primary: $cp-blue;
 $cp-secondary: $cp-brown;
 $cp-primary-active: darken($cp-primary, 5%);
 $cp-grey: #7F878A;
+$cp-grey-active: lighten($cp-grey, 5%);
 $cp-charcoal: #333333;
 $cp-overlay-light: rgba(255,255,255,0.7);
 $cp-overlay-dark: rgba(0,0,0,0.7);
@@ -207,7 +208,7 @@ body, html {
 *   Header
 */
 
-$cp-header-height: 100px;
+$cp-header-height: 80px;
 $cp-header-li-width: 110px;
 
 header {
@@ -222,12 +223,12 @@ header {
         float: left;
         height: $cp-header-height;
         padding: cp-spacing(3) 0;
-        svg {
-            height: 100%;
-            width: 80px;
-        }
+        // svg {
+        //     height: 100%;
+        //     width: 80px;
+        // }
         img {
-            vertical-align: top;
+            // vertical-align: top;
             height: 100%;
             width: auto;
         }
@@ -276,7 +277,8 @@ header {
                     }
                     a {
                         transition: color .5s ease-in-out;
-                        color: #ffffff;
+                        // color: #ffffff;
+						color: $cp-primary;
                         text-decoration: none;
                     }
                 }
