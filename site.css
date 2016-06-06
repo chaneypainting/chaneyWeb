@@ -82,7 +82,7 @@
 body, html {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
-  color: #7F878A; }
+  color: #333333; }
   body h1, html h1 {
     font-size: 2.969rem;
     font-family: "EB Garamond", serif; }
@@ -90,12 +90,14 @@ body, html {
     font-size: 2rem;
     font-family: "Raleway", sans-serif;
     margin-bottom: 0;
-    color: #004259; }
+    color: #00aeef;
+    font-weight: 200; }
   body h3, html h3 {
     font-size: 1.484rem;
     font-family: "Raleway", sans-serif;
     margin-bottom: 0;
-    color: #004259; }
+    color: #00aeef;
+    font-weight: 200; }
   body a, body button, html a, html button {
     font-family: "Raleway", sans-serif;
     font-size: 1rem; }
@@ -103,7 +105,7 @@ body, html {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1rem; }
   body p, html p {
-    color: #333333;
+    color: #7F878A;
     line-height: 1.7em;
     margin: 15px 0; }
   body section, html section {
@@ -119,7 +121,7 @@ body, html {
   display: inline-block;
   margin: 5px 0;
   padding: 5px 10px;
-  background-color: #004259;
+  background-color: #00aeef;
   color: #ffffff;
   border: none;
   outline: none;
@@ -129,7 +131,7 @@ body, html {
     cursor: pointer;
     color: #ffffff;
     transition: all .2s ease-in-out;
-    background-color: #002f40; }
+    background-color: #009bd6; }
   .cp-cta:hover, .cp-cta:active {
     outline: none; }
 
@@ -145,7 +147,7 @@ body, html {
   .cp-cta-on-dark:hover {
     text-decoration: none;
     cursor: pointer;
-    color: #004259;
+    color: #00aeef;
     transition: all .2s ease-in-out;
     background-color: #ffffff; }
   .cp-cta-on-dark:hover, .cp-cta-on-dark:active {
@@ -160,6 +162,7 @@ input, textarea {
 *   Header
 */
 header {
+  border-bottom: 1px solid #eeeeee;
   background-color: #ffffff;
   z-index: 100;
   width: 100%;
@@ -205,7 +208,7 @@ header {
             cursor: pointer; }
         header div.cp-nav-links ul li:hover a {
           transition: color .5s ease-in-out;
-          color: #004259;
+          color: #00aeef;
           text-decoration: none; }
 
 /*
@@ -244,7 +247,7 @@ div.cp-header-normalizer {
       margin-top: 20px;
       margin-bottom: 15px;
       padding-left: 20px;
-      border-left: 6px solid #ffffff; }
+      border-left: 6px solid #00aeef; }
     .cp-landing-section div.cp-landing-content a {
       margin: 10px; }
 
@@ -267,11 +270,13 @@ div.cp-header-normalizer {
     .cp-about-section div.cp-employee span.cp-about-name {
       margin-top: 5px;
       font-family: "Satisfy", cursive;
-      font-size: 1.484rem; }
+      font-size: 1.484rem;
+      color: #7F878A; }
     .cp-about-section div.cp-employee span.cp-about-title {
       font-family: "Raleway", sans-serif;
       font-size: 1rem;
-      font-weight: 600; }
+      font-weight: 600;
+      color: #7F878A; }
 
 /*
 *   Paralax Price Section
@@ -284,8 +289,8 @@ div.cp-header-normalizer {
   width: 100%; }
   .cp-paralax-price-container div.cp-price {
     padding: 0;
-    margin-top: 110px;
-    margin-bottom: 110px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     position: relative; }
     .cp-paralax-price-container div.cp-price > div.cp-price-bg {
       background-image: url(images/paint.jpg);
@@ -302,15 +307,15 @@ div.cp-header-normalizer {
       left: 0px;
       z-index: 49; }
     .cp-paralax-price-container div.cp-price > div.cp-price-content {
-      background-color: rgba(0, 0, 0, 0.6);
+      background-color: rgba(255, 255, 255, 0.7);
       position: relative;
       text-align: center;
       z-index: 50;
       padding: 35px;
       border-radius: 4px;
       border: 1px solid transparent; }
-      .cp-paralax-price-container div.cp-price > div.cp-price-content h2, .cp-paralax-price-container div.cp-price > div.cp-price-content p {
-        color: #ffffff; }
+      .cp-paralax-price-container div.cp-price > div.cp-price-content p {
+        color: #333333; }
       .cp-paralax-price-container div.cp-price > div.cp-price-content h2 {
         margin: 0; }
 
@@ -365,7 +370,7 @@ div.cp-header-normalizer {
       color: #333333 !important;
       margin-right: 5px; }
     .cp-contact-section .cp-contact-details > div a, .cp-contact-section .cp-contact-details > div span, .cp-contact-section .cp-contact-details > div .cp-contact-lic {
-      color: #7F878A;
+      color: #333333;
       font-size: 1rem; }
     .cp-contact-section .cp-contact-details > div .cp-contact-address {
       display: block;
@@ -387,13 +392,10 @@ div.cp-header-normalizer {
 
 .cp-contact-section form {
   margin-top: 15px; }
-  .cp-contact-section form > div {
+  .cp-contact-section form > input, .cp-contact-section form textarea {
     width: 100%;
     margin: 10px 0; }
-  .cp-contact-section form input {
-    width: 100%; }
   .cp-contact-section form textarea {
-    width: 100%;
     height: 200px; }
 
 .cp-contact-section .cp-contact-col-right {
@@ -419,7 +421,7 @@ div.cp-header-normalizer {
 *   Footer
 */
 footer {
-  background-color: #004259;
+  background-color: #00aeef;
   text-align: center;
   color: #fff;
   padding: 10px;

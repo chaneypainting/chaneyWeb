@@ -116,6 +116,7 @@ $cp-font-size-xs:0.5rem;        // 8px
 $cp-font-size-xxs:0.371rem;     // 5.9px
 // Colors
 $cp-blue: #004259;
+$cp-blue: #00aeef;
 $cp-brown: #775E53;
 $cp-tan: #A29588;
 $cp-primary: $cp-blue;
@@ -142,7 +143,7 @@ $cp-section-top-margin: cp-spacing(15);
 body, html {
     font-family: $cp-font-body;
     font-size: $cp-font-size-base;
-    color: $cp-grey;
+    color: $cp-charcoal;
     h1 {
         font-size: $cp-font-size-xxl;
         font-family: $cp-font-heading;
@@ -152,12 +153,14 @@ body, html {
         font-family: $cp-font-title;
         margin-bottom: 0;
         color: $cp-primary;
+		font-weight: 200;
     }
     h3 {
         font-size: $cp-font-size-lg;
         font-family: $cp-font-title;
         margin-bottom: 0;
         color: $cp-primary;
+		font-weight: 200;
     }
     a, button {
         font-family: $cp-font-title;
@@ -168,7 +171,7 @@ body, html {
         font-size: $cp-font-size-md;
     }
     p {
-        color: $cp-charcoal;
+        color: $cp-grey;
         line-height: 1.7em;
         margin: cp-spacing(3) 0;
     }
@@ -241,6 +244,9 @@ $cp-header-height: 80px;
 $cp-header-li-width: 110px;
 
 header {
+
+	border-bottom: 1px solid #eeeeee;
+
     background-color: #ffffff;
     z-index: 100;
     width: 100%;
@@ -342,7 +348,7 @@ div.cp-header-normalizer {
 			margin-top: cp-spacing(4);
 			margin-bottom: cp-spacing(3);
 			padding-left: 20px;
-			border-left: 6px solid #ffffff;
+			border-left: 6px solid $cp-primary;
 		}
 
 		a {
@@ -381,11 +387,13 @@ div.cp-header-normalizer {
                 margin-top: cp-spacing(1);
                 font-family: $cp-font-script;
                 font-size: $cp-font-size-lg;
+				color: $cp-grey;
             }
             &.cp-about-title {
                 font-family: $cp-font-title;
                 font-size: $cp-font-size-md;
                 font-weight: 600;
+				color: $cp-grey;
             }
         }
     }
@@ -406,9 +414,11 @@ div.cp-header-normalizer {
 
     div.cp-price {
 
+		$cp-price-space: cp-spacing(10);
+
         padding: 0;
-        margin-top: cp-spacing(22);
-        margin-bottom: cp-spacing(22);
+        margin-top: $cp-price-space;
+        margin-bottom: $cp-price-space;
 		position: relative;
 
 		> div.cp-price-bg {
@@ -427,7 +437,7 @@ div.cp-header-normalizer {
 		}
 
 		> div.cp-price-content {
-			background-color: $cp-overlay-dark;
+			background-color: $cp-overlay-light;
 			position: relative;
 			text-align: center;
 			z-index: 50;
@@ -435,8 +445,9 @@ div.cp-header-normalizer {
 			border-radius: 4px;
 			border: 1px solid transparent;
 
-			h2, p {
-				color: #ffffff;
+			p {
+				// color: #ffffff;
+				color: $cp-charcoal;
 			}
 
 			h2 {
@@ -534,7 +545,7 @@ $cp-gallery-tile-height: 250px;
                 margin-right: cp-spacing(1);
             }
             a, span, .cp-contact-lic {
-                color: $cp-grey;
+                color: $cp-charcoal;
                 font-size: $cp-font-size-md;
             }
             .cp-contact-address {
@@ -565,17 +576,12 @@ $cp-gallery-tile-height: 250px;
 
 		margin-top: cp-spacing(3);
 
-        > div {
+        > input, textarea {
             width: 100%;
             margin: cp-spacing(2) 0;
         }
 
-		input {
-			width: 100%;
-		}
-
 		textarea {
-			width: 100%;
 			height: 200px;
 		}
 
