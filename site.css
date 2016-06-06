@@ -368,6 +368,14 @@ div.cp-header-normalizer {
 .cp-contact-section .cp-val-input {
   width: 50px; }
 
+.cp-contact-section .cp-validation-message {
+  color: red;
+  display: block;
+  padding: 10px;
+  border: 1px solid red;
+  list-style: none;
+  display: none; }
+
 .cp-contact-section button {
   float: right; }
 

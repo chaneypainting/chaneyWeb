@@ -7,22 +7,16 @@
 */
 
 var Chaney = {
-    colors: (function() {
-        return new Array(
-        '#00aeef', // Starting Blue
-        // '#B800EF', // Purple
-        // '#EF4000', // Red
-        '#65C449', // Green
-        '#E8812C') // Oarnge
 
-    })(),
-    colorIndex: 0,
-    $colorElem: $('.dripPath'),
     $gallery: $('.cp-gallery-tiles'),
     galleryClosedHeight: null,
     galleryOpenHeight: null,
     $galleryButton: $('.cp-gallery-tiles ~ button'),
-    $contactForm: $('.cp-contact-form')
+    $contactForm: $('.cp-contact-form'),
+    formValInt: null,
+    $valRiddle: $('#validationRiddle'),
+    $valAnswer: $('#validationAnswer'),
+    $valResponse: $('#validationResponse')
 }
 
 $(function() {
@@ -32,23 +26,23 @@ $(function() {
 
     $('[data-goto]').click(gotoElem);
 
-    // setInterval(updateColor,5000);
-
+    generateFormValidationRiddle();
 
 });
 
-function updateColor()
-{
-    Chaney.$colorElem.attr('fill', Chaney.colors[Chaney.colorIndex]);
-    updateStep();
+function generateFormValidationRiddle() {
+
+    var x = getRandomNum(),
+        y = getRandomNum();
+    Chaney.validationAnswer = x + y;
+
+    var validationRiddle = `${x} + ${y} =`;
+    Chaney.$valRiddle.html(validationRiddle);
+
 };
 
-function updateStep() {
-    if (Chaney.colorIndex >= Chaney.colors.length) {
-        Chaney.colorIndex = 0;
-    } else {
-        Chaney.colorIndex++;
-    }
+function getRandomNum() {
+    return Math.floor(Math.random() * (9)) + 1;
 };
 
 function gotoElem(e) {
@@ -61,7 +55,7 @@ function gotoElem(e) {
         scrollTop: targetPosition
     }, 1000);
 
-}
+};
 
 function toggleGallery() {
 
@@ -83,24 +77,56 @@ function toggleGallery() {
         maxHeight: newHeight
     }, 800);
 
-}
+};
 
+function validate() {
+
+    var issues = new Array();
+
+    if (parseInt(Chaney.$valAnswer.val()) !== Chaney.validationAnswer) {
+        issues.push("Plese complete math problem");
+    }
+
+    if (issues.length == 0) {
+        Chaney.$valResponse.html(null);
+        Chaney.$valResponse.hide();
+        return true;
+    } else {
+        validationResponse(issues);
+        return false;
+    }
+
+};
+
+function validationResponse(responseArray) {
+    Chaney.$valResponse.html(null);
+    for (var i = 0; i < responseArray.length; i++) {
+        Chaney.$valResponse.append(`<li>${responseArray[i]}</li>`);
+    };
+    Chaney.$valResponse.show();
+};
 
 function submitContactForm() {
 
+    if (!validate()) {
+        return;
+    };
+
     var formData = Chaney.$contactForm.serialize();
 
-
+    // DEV
     console.log(formData);
+    return;
+    // /DEV
 
     // Submit the form using AJAX.
-    $.ajax({
-        type: 'POST',
-        url: 'email.php',
-        data: formData
-    });
+    // $.ajax({
+    //     type: 'POST',
+    //     url: 'email.php',
+    //     data: formData
+    // });
 
-}
+};
 
 
 

@@ -543,6 +543,15 @@ $cp-gallery-tile-height: 250px;
 		width: 50px;
 	}
 
+	.cp-validation-message {
+		color: red;
+		display: block;
+		padding: cp-spacing(2);
+		border: 1px solid red;
+		list-style: none;
+		display: none;
+	}
+
 	button {
 		float: right;
 	}
