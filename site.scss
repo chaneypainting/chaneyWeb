@@ -516,7 +516,12 @@ $cp-gallery-tile-height: 250px;
 
 
 .cp-contact-section {
-
+	.cp-assurance {
+		font-style: italic;
+		position: relative;
+		bottom: 7px;
+		font-size: $cp-font-size-sm;
+	}
     .cp-contact-details {
         margin-top: cp-spacing(4);
         > div {

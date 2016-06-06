@@ -350,6 +350,12 @@ div.cp-header-normalizer {
 /*
 *   Contact Section
 */
+.cp-contact-section .cp-assurance {
+  font-style: italic;
+  position: relative;
+  bottom: 7px;
+  font-size: 0.742rem; }
+
 .cp-contact-section .cp-contact-details {
   margin-top: 20px; }
   .cp-contact-section .cp-contact-details > div {
