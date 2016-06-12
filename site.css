@@ -89,7 +89,7 @@ body, html {
   body h2, html h2 {
     font-size: 2rem;
     font-family: "Raleway", sans-serif;
-    margin-bottom: 0;
+    margin-bottom: 10px;
     color: #00aeef;
     font-weight: 200; }
   body h3, html h3 {
@@ -107,55 +107,51 @@ body, html {
   body p, html p {
     color: #7F878A;
     line-height: 1.7em;
-    margin: 15px 0; }
+    margin: 15px 0;
+    margin-top: 0; }
   body section, html section {
     margin-top: 75px; }
-
-.cp-hidden {
-  display: none !important; }
-
-.dripPath {
-  transition: fill ease-in-out 3.5s; }
-
-.cp-cta {
-  display: inline-block;
-  margin: 5px 0;
-  padding: 5px 10px;
-  background-color: #00aeef;
-  color: #ffffff;
-  border: none;
-  outline: none;
-  transition: all .2s ease-in-out; }
-  .cp-cta:hover {
-    text-decoration: none;
-    cursor: pointer;
+  body .cp-hidden, html .cp-hidden {
+    display: none !important; }
+  body .dripPath, html .dripPath {
+    transition: fill ease-in-out 3.5s; }
+  body .cp-cta, html .cp-cta {
+    display: inline-block;
+    margin: 5px 0;
+    padding: 5px 10px;
+    background-color: #00aeef;
     color: #ffffff;
-    transition: all .2s ease-in-out;
-    background-color: #009bd6; }
-  .cp-cta:hover, .cp-cta:active {
-    outline: none; }
-
-.cp-cta-on-dark {
-  display: inline-block;
-  margin: 5px 0;
-  padding: 5px 10px;
-  background-color: transparent;
-  color: #ffffff;
-  border: 1px solid #ffffff;
-  outline: none;
-  transition: all .2s ease-in-out; }
-  .cp-cta-on-dark:hover {
-    text-decoration: none;
-    cursor: pointer;
-    color: #00aeef;
-    transition: all .2s ease-in-out;
-    background-color: #ffffff; }
-  .cp-cta-on-dark:hover, .cp-cta-on-dark:active {
-    outline: none; }
-
-input, textarea {
-  border: 2px solid #dddddd;
-  padding: 10px; }
+    border: none;
+    outline: none;
+    transition: all .2s ease-in-out; }
+    body .cp-cta:hover, html .cp-cta:hover {
+      text-decoration: none;
+      cursor: pointer;
+      color: #ffffff;
+      transition: all .2s ease-in-out;
+      background-color: #009bd6; }
+    body .cp-cta:hover, body .cp-cta:active, html .cp-cta:hover, html .cp-cta:active {
+      outline: none; }
+  body .cp-cta-on-dark, html .cp-cta-on-dark {
+    display: inline-block;
+    margin: 5px 0;
+    padding: 5px 10px;
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    outline: none;
+    transition: all .2s ease-in-out; }
+    body .cp-cta-on-dark:hover, html .cp-cta-on-dark:hover {
+      text-decoration: none;
+      cursor: pointer;
+      color: #00aeef;
+      transition: all .2s ease-in-out;
+      background-color: #ffffff; }
+    body .cp-cta-on-dark:hover, body .cp-cta-on-dark:active, html .cp-cta-on-dark:hover, html .cp-cta-on-dark:active {
+      outline: none; }
+  body input, body textarea, html input, html textarea {
+    border: 2px solid #dddddd;
+    padding: 10px; }
 
 /*
 *   Header
@@ -263,29 +259,23 @@ div.cp-header-normalizer {
 /*
 *   About Section
 */
-.cp-about-section div.cp-employee {
-  margin-bottom: 50px; }
-  .cp-about-section div.cp-employee .cp-about-img {
-    border: 1px solid transparent;
-    border-radius: 50%;
-    overflow: hidden; }
-    .cp-about-section div.cp-employee .cp-about-img img {
-      width: 100%;
-      height: auto; }
-  .cp-about-section div.cp-employee span {
-    text-align: center;
-    display: block;
-    font-family: "EB Garamond", serif; }
-    .cp-about-section div.cp-employee span.cp-about-name {
-      margin-top: 5px;
-      font-family: "Satisfy", cursive;
-      font-size: 1.484rem;
-      color: #7F878A; }
-    .cp-about-section div.cp-employee span.cp-about-title {
-      font-family: "Raleway", sans-serif;
-      font-size: 1rem;
-      font-weight: 600;
-      color: #7F878A; }
+.cp-about-section {
+  padding-bottom: 75px; }
+  .cp-about-section .cp-employee-boxes {
+    height: 340px; }
+    .cp-about-section .cp-employee-boxes div.cp-employee {
+      position: relative;
+      width: 33.3322%;
+      float: left;
+      height: 170px;
+      padding: 5px;
+      margin: 0;
+      overflow: hidden; }
+      .cp-about-section .cp-employee-boxes div.cp-employee img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        object-position: center; }
 
 /*
 *   Paralax Price Section

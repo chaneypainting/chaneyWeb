@@ -151,7 +151,7 @@ body, html {
     h2 {
         font-size: $cp-font-size-xl;
         font-family: $cp-font-title;
-        margin-bottom: 0;
+        margin-bottom: cp-spacing(2);
         color: $cp-primary;
 		font-weight: 200;
     }
@@ -174,67 +174,70 @@ body, html {
         color: $cp-grey;
         line-height: 1.7em;
         margin: cp-spacing(3) 0;
+		margin-top: 0;
     }
     section {
         margin-top: $cp-section-top-margin;
     }
-}
-.cp-hidden {
-    display: none !important;
-}
-.dripPath {
-    transition: fill ease-in-out 3.5s;
-}
-.cp-cta {
-    display: inline-block;
-    margin: cp-spacing(1) 0;
-    padding: cp-spacing(1) cp-spacing(2);
-    background-color: $cp-primary;
-    color: #ffffff;
-    border: none;
-    outline: none;
-    transition: all .2s ease-in-out;
-    &:hover {
-        text-decoration: none;
-        cursor: pointer;
-        color: #ffffff;
-        transition: all .2s ease-in-out;
-        background-color: $cp-primary-active;
-    }
-    &:hover,
-    &:active {
-        outline: none;
-    }
 
+	.cp-hidden {
+	    display: none !important;
+	}
+	.dripPath {
+	    transition: fill ease-in-out 3.5s;
+	}
+	.cp-cta {
+	    display: inline-block;
+	    margin: cp-spacing(1) 0;
+	    padding: cp-spacing(1) cp-spacing(2);
+	    background-color: $cp-primary;
+	    color: #ffffff;
+	    border: none;
+	    outline: none;
+	    transition: all .2s ease-in-out;
+	    &:hover {
+	        text-decoration: none;
+	        cursor: pointer;
+	        color: #ffffff;
+	        transition: all .2s ease-in-out;
+	        background-color: $cp-primary-active;
+	    }
+	    &:hover,
+	    &:active {
+	        outline: none;
+	    }
+
+	}
+
+	.cp-cta-on-dark {
+	    display: inline-block;
+	    margin: cp-spacing(1) 0;
+	    padding: cp-spacing(1) cp-spacing(2);
+	    background-color: transparent;
+	    color: #ffffff;
+	    border: 1px solid #ffffff;
+	    outline: none;
+	    transition: all .2s ease-in-out;
+	    &:hover {
+	        text-decoration: none;
+	        cursor: pointer;
+	        color: $cp-primary;
+	        transition: all .2s ease-in-out;
+	        background-color: #ffffff;
+	    }
+	    &:hover,
+	    &:active {
+	        outline: none;
+	    }
+	}
+
+	input, textarea {
+		border: 2px solid $cp-offwhite;
+		// border-radius: 4px;
+		padding: cp-spacing(2);
+	}
 }
 
-.cp-cta-on-dark {
-    display: inline-block;
-    margin: cp-spacing(1) 0;
-    padding: cp-spacing(1) cp-spacing(2);
-    background-color: transparent;
-    color: #ffffff;
-    border: 1px solid #ffffff;
-    outline: none;
-    transition: all .2s ease-in-out;
-    &:hover {
-        text-decoration: none;
-        cursor: pointer;
-        color: $cp-primary;
-        transition: all .2s ease-in-out;
-        background-color: #ffffff;
-    }
-    &:hover,
-    &:active {
-        outline: none;
-    }
-}
-
-input, textarea {
-	border: 2px solid $cp-offwhite;
-	// border-radius: 4px;
-	padding: cp-spacing(2);
-}
 
 /*
 *   Header
@@ -379,37 +382,30 @@ div.cp-header-normalizer {
 
 
 .cp-about-section {
-    div.cp-employee {
-        margin-bottom: cp-spacing(10);
-        .cp-about-img {
-            // width: 100%;
-            // padding-top: 100%;
-            border: 1px solid transparent;
-            border-radius: 50%;
-            overflow: hidden;
-            img {
-                width: 100%;
-                height: auto;
-            }
-        }
-        span {
-            text-align: center;
-            display: block;
-            font-family: $cp-font-heading;
-            &.cp-about-name {
-                margin-top: cp-spacing(1);
-                font-family: $cp-font-script;
-                font-size: $cp-font-size-lg;
-				color: $cp-grey;
-            }
-            &.cp-about-title {
-                font-family: $cp-font-title;
-                font-size: $cp-font-size-md;
-                font-weight: 600;
-				color: $cp-grey;
-            }
-        }
-    }
+	padding-bottom: cp-spacing(15);
+	.cp-employee-boxes {
+
+		height: 340px;
+
+	    div.cp-employee {
+
+			position: relative;
+			width: 33.3322%;
+			float: left;
+			height: 170px;
+			padding: 5px;
+			margin: 0;
+			overflow: hidden;
+
+			img {
+				object-fit: cover;
+				width: 100%;
+				height: 100%;
+				object-position: center;
+			}
+			
+		}
+	}
 }
 
 

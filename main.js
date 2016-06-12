@@ -64,21 +64,21 @@ function createTestimonialArray() {
 
 function rollLanding() {
 
-    var animateTime = 750;
+    var animateTime = 500;
 
-    Chaney.$rollerElem.animate({
+    Chaney.$rollerElem.first().animate({
         top: -Chaney.rollerHeight
     }, animateTime, function() {
 
         // Animation complete.
         Chaney.$rollerElem
-        .hide()
-        .html(getNextRollerMessage())
-        .css('top', Chaney.rollerHeight)
-        .show()
-        .animate({
-            top: 0
-        }, animateTime);
+            .hide()
+            .html(getNextRollerMessage())
+            .css('top', Chaney.rollerHeight)
+            .show()
+            .animate({
+                top: 0
+            }, animateTime);
 
     });
 
