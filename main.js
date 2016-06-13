@@ -24,9 +24,17 @@ var Chaney = {
     $landingRoller: $('#roller'),
     $rollerElem: null,
     rollerHeight: null,
-    testMessages: [],
-    testMessageIndex: 1,
-    testMessageLength: null
+    rollerMessages: [],
+    rollerIndex: 1,
+    rollerLength: null,
+    rollerInterval: null,
+    startInterval: function() {
+        Chaney.rollerInterval = setInterval(rollLanding, 6000);
+    },
+    stopInterval: function() {
+        clearInterval(Chaney.rollerInterval);
+        Chaney.rollerInterval = null;
+    }
 }
 
 $(function() {
@@ -38,7 +46,7 @@ $(function() {
     Chaney.landingHeight = $('.cp-landing-section').innerHeight() * .50;
     Chaney.rollerHeight = Chaney.$landingRoller.innerHeight();
     createTestimonialArray();
-    Chaney.testMessageLength = Chaney.testMessages.length;
+    Chaney.rollerLength = Chaney.rollerMessages.length;
     Chaney.$rollerElem = $('#roller > blockquote');
 
     // Init Listeners
@@ -48,7 +56,7 @@ $(function() {
 
     // Kick Off Functions
     generateFormValidationRiddle();
-    setInterval(rollLanding, 7000);
+    Chaney.startInterval();
 
 });
 
@@ -56,47 +64,59 @@ function createTestimonialArray() {
 
     Chaney.$landingRoller.children('blockquote').each(function(i, elem) {
         var $elem = $(elem);
-        Chaney.testMessages.push($elem.html());
+        Chaney.rollerMessages.push($elem.html());
         if (i != 0) { $elem.remove(); }
     });
 
 }
 
-function rollLanding() {
+function rollLanding(index) {
 
-    var animateTime = 500;
+    Chaney.stopInterval();
+
+    console.log('Index: ', index);
+    console.log('RollerIndex: ', Chaney.rollerIndex);
+
+    if (index == Chaney.rollerIndex) {
+        Chaney.startInterval();
+        return;
+    }
+
+    var animateTime = 500
+        html = (index ? getNextRollerMessage(index) : getNextRollerMessage());
 
     Chaney.$rollerElem.first().animate({
         top: -Chaney.rollerHeight
     }, animateTime, function() {
 
-        // Animation complete.
         Chaney.$rollerElem
             .hide()
-            .html(getNextRollerMessage())
+            .html(html)
             .css('top', Chaney.rollerHeight)
             .show()
             .animate({
                 top: 0
-            }, animateTime);
+            }, animateTime, function() {
 
+                Chaney.startInterval();
+
+            });
     });
-
 };
 
-function getNextRollerMessage() {
+function getNextRollerMessage(index) {
 
-    var i = Chaney.testMessageIndex,
-        test = i + 1;
+    var message = (index ? Chaney.rollerMessages[index] : Chaney.rollerMessages[Chaney.rollerIndex]);
 
-    if (test >= Chaney.testMessageLength) {
-        Chaney.testMessageIndex = 0;
-    } else {
-        Chaney.testMessageIndex++;
+    Chaney.rollerIndex++;
+
+    if (Chaney.rollerIndex >= Chaney.rollerLength) {
+        Chaney.rollerIndex = 0;
     }
 
-    console.log("Array Indexed at: ", i);
-    return Chaney.testMessages[i];
+    return message
+
+
 };
 
 function onWindowScroll() {

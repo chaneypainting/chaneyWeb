@@ -326,6 +326,7 @@ div.cp-header-normalizer {
     height: 500px;
     overflow: hidden;
 	margin-top: 0;
+	position: relative;
 
 	background-image: url(images/chaney_landing_bg.jpg);
 	background-repeat: no-repeat;
@@ -372,6 +373,26 @@ div.cp-header-normalizer {
 		}
 
     }
+
+	.cp-roller-controls {
+		position: absolute;
+		right: cp-spacing(2);
+		top: calc(50% - 50px);
+		button {
+			border: 1px solid #fff;
+			border-radius: 50%;
+			padding: 0;
+			margin: 0;
+			margin: cp-spacing(2) 0;
+			display: block;
+			width: cp-spacing(3);
+			height: cp-spacing(3);
+			background-color: transparent;
+			&:hover {
+				background-color: #fff;
+			}
+		}
+	}
 }
 
 
@@ -403,7 +424,7 @@ div.cp-header-normalizer {
 				height: 100%;
 				object-position: center;
 			}
-			
+
 		}
 	}
 }
@@ -571,8 +592,7 @@ $cp-gallery-tile-height: 250px;
 	.cp-validation-message {
 		color: red;
 		display: block;
-		padding: cp-spacing(2);
-		border: 1px solid red;
+		padding: cp-spacing(2) 0;
 		list-style: none;
 		display: none;
 	}
