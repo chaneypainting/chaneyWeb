@@ -83,6 +83,9 @@
 *   Global Variables
 */
 /*
+*	Mixins
+*/
+/*
 *   Global
 */
 body, html {
@@ -317,10 +320,11 @@ div.cp-header-normalizer {
 *   Paralax Price Section
 */
 .cp-paralax-price-container {
-  background-image: url(images/chaney_landing_bg.jpg);
+  background-image: url(images/un_house.jpg);
   background-image: url(images/un_house_sm.jpg);
+  background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: top center;
   background-attachment: fixed;
   width: 100%;
   padding: 35px 0; }
@@ -356,6 +360,19 @@ div.cp-header-normalizer {
   .cp-services-section .cp-service > div img {
     width: 100%;
     height: auto; }
+
+/*
+*	Community Section
+*/
+section.cp-community-section {
+  background-image: url(images/un_house.jpg);
+  background-image: url(images/un_house_sm.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  background-attachment: fixed; }
+  section.cp-community-section button {
+    float: right; }
 
 /*
 *   Gallery Section
@@ -439,9 +456,11 @@ div.cp-header-normalizer {
 *	Social Media Section
 */
 section.cp-social-media-section {
+  background-image: url(images/un_house.jpg);
   background-image: url(images/un_house_sm.jpg);
+  background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: top center;
   background-attachment: fixed;
   padding: 75px 0; }
   section.cp-social-media-section .cp-social {

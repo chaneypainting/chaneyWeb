@@ -153,6 +153,22 @@ $cp-bs-space: 15px;
 }
 $cp-section-top-margin: cp-spacing(15);
 
+
+
+/*
+*	Mixins
+*/
+@mixin main-image-section() {
+	background-image: url(images/un_house.jpg);
+	background-image: $cp-main-image;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top center;
+	background-attachment: fixed;
+}
+
+
+
 /*
 *   Global
 */
@@ -350,12 +366,7 @@ div.cp-header-normalizer {
 	margin-top: 0;
 	position: relative;
 
-	background-image: url(images/un_house.jpg);
-	background-image: $cp-main-image;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: top center;
-	background-attachment: fixed;
+	@include main-image-section;
 
 	display: flex;
 	align-content: flex-start;
@@ -466,11 +477,7 @@ div.cp-header-normalizer {
 
 .cp-paralax-price-container {
 
-    background-image: url(images/chaney_landing_bg.jpg);
-	background-image: $cp-main-image;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    @include main-image-section;
     width: 100%;
 	padding: cp-spacing(7) 0;
 
@@ -497,25 +504,14 @@ div.cp-header-normalizer {
 		position: relative;
 
 		> div.cp-price-content {
-			// background-color: $cp-overlay-light;
 			position: relative;
 			text-align: center;
 			z-index: 50;
 			padding: 0 cp-spacing(7);
-			// border-radius: 4px;
 			border: 1px solid transparent;
-
-			p {
-				// color: #ffffff;
-				// color: $cp-charcoal;
-			}
 
 			h2 {
 				margin: 0;
-			}
-
-			p {
-
 			}
 
 		}
@@ -543,6 +539,19 @@ $cp-service-img-height: 200px;
         }
     }
 }
+
+
+/*
+*	Community Section
+*/
+section.cp-community-section {
+	@include main-image-section;
+	button {
+		float: right;
+	}
+}
+
+
 
 
 /*
@@ -664,10 +673,7 @@ $cp-gallery-tile-height: 250px;
 *	Social Media Section
 */
 section.cp-social-media-section {
-	background-image: $cp-main-image;
-	background-size: cover;
-	background-position: center;
-	background-attachment: fixed;
+	@include main-image-section;
 
 	padding: cp-spacing(15) 0;
 
