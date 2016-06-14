@@ -39,42 +39,54 @@
 }
 
 .cp-icon-twitter {
-    color: #65CCEF !important;
+	&:hover {
+    	color: #65CCEF !important;
+	}
     &:before {
         content: "\e900";
     }
 }
 
 .cp-icon-google {
-    color: #4285F4 !important;
+	&:hover {
+    	color: #4285F4 !important;
+	}
     &:before {
         content: "\e901";
     }
 }
 
 .cp-icon-pintrist {
-    color: #bd081c !important;
+	&:hover {
+    	color: #bd081c !important;
+	}
     &:before {
         content: "\e902";
     }
 }
 
 .cp-icon-facebook {
-    color: #3b5998 !important;
+	&:hover {
+    	color: #3b5998 !important;
+	}
     &:before {
         content: "\e903";
     }
 }
 
 .cp-icon-youtube {
-    color: #cd201f !important;
+	&:hover {
+    	color: #cd201f !important;
+	}
     &:before {
         content: "\e904";
     }
 }
 
 .cp-icon-linkedin {
-    color: #0077B5 !important;
+	&:hover {
+    	color: #0077B5 !important;
+	}
     &:before {
         content: "\e905";
     }
@@ -323,16 +335,25 @@ div.cp-header-normalizer {
 
 .cp-landing-section {
 
-    height: 500px;
+    height: 700px;
     overflow: hidden;
 	margin-top: 0;
 	position: relative;
 
-	background-image: url(images/chaney_landing_bg.jpg);
+	background-image: url(images/un_house.jpg);
+	background-image: url(images/ss_wall.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-position: center;
+	background-position: top center;
 	background-attachment: fixed;
+
+	display: flex;
+	align-content: flex-start;
+	align-items: center;
+
+	> div.row {
+		flex: 1 1 auto;
+	}
 
     div.cp-landing-content {
 
@@ -341,7 +362,6 @@ div.cp-header-normalizer {
 		flex-wrap: wrap;
 		width: 400px;
 		margin: 0 auto;
-		margin-top: 150px;
 		color: #fff;
 
 		h1 {
@@ -437,6 +457,7 @@ div.cp-header-normalizer {
 .cp-paralax-price-container {
 
     background-image: url(images/chaney_landing_bg.jpg);
+	background-image: url(images/ss_wall.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -451,23 +472,8 @@ div.cp-header-normalizer {
         margin-bottom: $cp-price-space;
 		position: relative;
 
-		> div.cp-price-bg {
-			background-image: url(images/chaney_landing_bg.jpg);
-			background-size: cover;
-			padding: 0;
-			background-position: center;
-			background-attachment: fixed;
-			filter: blur(5px);
-			position: absolute;
-			top: 0px;
-			right: 0px;
-			bottom: 0px;
-			left: 0px;
-			z-index: 49;
-		}
-
 		> div.cp-price-content {
-			background-color: $cp-overlay-light;
+			// background-color: $cp-overlay-light;
 			position: relative;
 			text-align: center;
 			z-index: 50;
@@ -625,10 +631,30 @@ $cp-gallery-tile-height: 250px;
 			height: 230px;
 			width: auto;
 		}
-		.cp-social a {
+	}
+}
+
+
+
+/*
+*	Social Media Section
+*/
+section.cp-social-media-section {
+	background-image: url(images/ss_wall.jpg);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+
+	padding: cp-spacing(15) 0;
+
+	.cp-social {
+		text-align: center;
+		a {
 			margin: 0 cp-spacing(1);
+			color: #fff;
 			span {
-				font-size: $cp-font-size-xl;
+				font-size: $cp-font-size-xxl;
+
 			}
 			&:hover,
 			&:active,
@@ -647,11 +673,10 @@ $cp-gallery-tile-height: 250px;
 
 footer {
 
-	background-color: $cp-primary;
+	background-color: #fff;
 	text-align: center;
-	color: #fff;
+	color: $cp-grey;
 	padding: cp-spacing(2);
-	margin-top: cp-spacing(6);
 
 }
 

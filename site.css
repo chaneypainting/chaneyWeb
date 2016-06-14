@@ -31,35 +31,41 @@
   [class^="cp-icon-"]::after, [class*=" cp-icon-"]::after {
     padding-left: .5em; }
 
-.cp-icon-twitter {
+.cp-icon-twitter:hover {
   color: #65CCEF !important; }
-  .cp-icon-twitter:before {
-    content: "\e900"; }
 
-.cp-icon-google {
+.cp-icon-twitter:before {
+  content: "\e900"; }
+
+.cp-icon-google:hover {
   color: #4285F4 !important; }
-  .cp-icon-google:before {
-    content: "\e901"; }
 
-.cp-icon-pintrist {
+.cp-icon-google:before {
+  content: "\e901"; }
+
+.cp-icon-pintrist:hover {
   color: #bd081c !important; }
-  .cp-icon-pintrist:before {
-    content: "\e902"; }
 
-.cp-icon-facebook {
+.cp-icon-pintrist:before {
+  content: "\e902"; }
+
+.cp-icon-facebook:hover {
   color: #3b5998 !important; }
-  .cp-icon-facebook:before {
-    content: "\e903"; }
 
-.cp-icon-youtube {
+.cp-icon-facebook:before {
+  content: "\e903"; }
+
+.cp-icon-youtube:hover {
   color: #cd201f !important; }
-  .cp-icon-youtube:before {
-    content: "\e904"; }
 
-.cp-icon-linkedin {
+.cp-icon-youtube:before {
+  content: "\e904"; }
+
+.cp-icon-linkedin:hover {
   color: #0077B5 !important; }
-  .cp-icon-linkedin:before {
-    content: "\e905"; }
+
+.cp-icon-linkedin:before {
+  content: "\e905"; }
 
 .cp-icon-phone:before {
   content: "\e912"; }
@@ -217,15 +223,25 @@ div.cp-header-normalizer {
 *   First Landing Section
 */
 .cp-landing-section {
-  height: 500px;
+  height: 700px;
   overflow: hidden;
   margin-top: 0;
   position: relative;
-  background-image: url(images/chaney_landing_bg.jpg);
+  background-image: url(images/un_house.jpg);
+  background-image: url(images/ss_wall.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
-  background-attachment: fixed; }
+  background-position: top center;
+  background-attachment: fixed;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+  -ms-flex-align: center;
+  align-items: center; }
+  .cp-landing-section > div.row {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto; }
   .cp-landing-section div.cp-landing-content {
     display: -ms-flexbox;
     display: flex;
@@ -235,7 +251,6 @@ div.cp-header-normalizer {
     flex-wrap: wrap;
     width: 400px;
     margin: 0 auto;
-    margin-top: 150px;
     color: #fff; }
     .cp-landing-section div.cp-landing-content h1 {
       margin: 0; }
@@ -299,6 +314,7 @@ div.cp-header-normalizer {
 */
 .cp-paralax-price-container {
   background-image: url(images/chaney_landing_bg.jpg);
+  background-image: url(images/ss_wall.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -308,22 +324,7 @@ div.cp-header-normalizer {
     margin-top: 50px;
     margin-bottom: 50px;
     position: relative; }
-    .cp-paralax-price-container div.cp-price > div.cp-price-bg {
-      background-image: url(images/chaney_landing_bg.jpg);
-      background-size: cover;
-      padding: 0;
-      background-position: center;
-      background-attachment: fixed;
-      -webkit-filter: blur(5px);
-      filter: blur(5px);
-      position: absolute;
-      top: 0px;
-      right: 0px;
-      bottom: 0px;
-      left: 0px;
-      z-index: 49; }
     .cp-paralax-price-container div.cp-price > div.cp-price-content {
-      background-color: rgba(255, 255, 255, 0.7);
       position: relative;
       text-align: center;
       z-index: 50;
@@ -422,19 +423,31 @@ div.cp-header-normalizer {
   .cp-contact-section .cp-contact-col-right img {
     height: 230px;
     width: auto; }
-  .cp-contact-section .cp-contact-col-right .cp-social a {
-    margin: 0 5px; }
-    .cp-contact-section .cp-contact-col-right .cp-social a span {
-      font-size: 2rem; }
-    .cp-contact-section .cp-contact-col-right .cp-social a:hover, .cp-contact-section .cp-contact-col-right .cp-social a:active, .cp-contact-section .cp-contact-col-right .cp-social a:focus {
-      text-decoration: none; }
+
+/*
+*	Social Media Section
+*/
+section.cp-social-media-section {
+  background-image: url(images/ss_wall.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 75px 0; }
+  section.cp-social-media-section .cp-social {
+    text-align: center; }
+    section.cp-social-media-section .cp-social a {
+      margin: 0 5px;
+      color: #fff; }
+      section.cp-social-media-section .cp-social a span {
+        font-size: 2.969rem; }
+      section.cp-social-media-section .cp-social a:hover, section.cp-social-media-section .cp-social a:active, section.cp-social-media-section .cp-social a:focus {
+        text-decoration: none; }
 
 /*
 *   Footer
 */
 footer {
-  background-color: #00aeef;
+  background-color: #fff;
   text-align: center;
-  color: #fff;
-  padding: 10px;
-  margin-top: 30px; }
+  color: #7F878A;
+  padding: 10px; }
