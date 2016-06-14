@@ -112,6 +112,9 @@
 /*
 *   Global Variables
 */
+// Body images
+$cp-main-image: url(images/ss_wall.jpg);
+$cp-main-image: url(images/un_house_sm.jpg);
 // Fonts
 $cp-font-heading: 'EB Garamond', serif;
 $cp-font-title: 'Raleway', sans-serif;
@@ -127,8 +130,9 @@ $cp-font-size-sm:0.742rem;      // 11.8px
 $cp-font-size-xs:0.5rem;        // 8px
 $cp-font-size-xxs:0.371rem;     // 5.9px
 // Colors
-$cp-blue: #004259;
-$cp-blue: #00aeef;
+$cp-blue: #004259; // Chaney
+$cp-blue: #00aeef; // Light
+// $cp-blue: #6b97b0; // un
 $cp-brown: #775E53;
 $cp-tan: #A29588;
 $cp-primary: $cp-blue;
@@ -174,6 +178,9 @@ body, html {
         color: $cp-primary;
 		font-weight: 200;
     }
+	.cp-h-ondark {
+		color: #fff;
+	}
     a, button {
         font-family: $cp-font-title;
         font-size: $cp-font-size-md;
@@ -187,6 +194,9 @@ body, html {
         line-height: 1.7em;
         margin: cp-spacing(3) 0;
 		margin-top: 0;
+		&.cp-p-ondark {
+			color: #fff;
+		}
     }
     section {
         margin-top: $cp-section-top-margin;
@@ -341,7 +351,7 @@ div.cp-header-normalizer {
 	position: relative;
 
 	background-image: url(images/un_house.jpg);
-	background-image: url(images/ss_wall.jpg);
+	background-image: $cp-main-image;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: top center;
@@ -457,11 +467,25 @@ div.cp-header-normalizer {
 .cp-paralax-price-container {
 
     background-image: url(images/chaney_landing_bg.jpg);
-	background-image: url(images/ss_wall.jpg);
+	background-image: $cp-main-image;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     width: 100%;
+	padding: cp-spacing(7) 0;
+
+	div.cp-price-icon-col {
+		// padding: cp-spacing(12) 0;
+		display: flex;
+		// align-content: flex-start;
+		align-items: center;
+
+		img {
+			height: 100%;
+			width: auto;
+
+		}
+	}
 
     div.cp-price {
 
@@ -477,13 +501,13 @@ div.cp-header-normalizer {
 			position: relative;
 			text-align: center;
 			z-index: 50;
-			padding: cp-spacing(7);
+			padding: 0 cp-spacing(7);
 			// border-radius: 4px;
 			border: 1px solid transparent;
 
 			p {
 				// color: #ffffff;
-				color: $cp-charcoal;
+				// color: $cp-charcoal;
 			}
 
 			h2 {
@@ -640,7 +664,7 @@ $cp-gallery-tile-height: 250px;
 *	Social Media Section
 */
 section.cp-social-media-section {
-	background-image: url(images/ss_wall.jpg);
+	background-image: $cp-main-image;
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;

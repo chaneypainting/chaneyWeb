@@ -104,6 +104,8 @@ body, html {
     margin-bottom: 0;
     color: #00aeef;
     font-weight: 200; }
+  body .cp-h-ondark, html .cp-h-ondark {
+    color: #fff; }
   body a, body button, html a, html button {
     font-family: "Raleway", sans-serif;
     font-size: 1rem; }
@@ -115,6 +117,8 @@ body, html {
     line-height: 1.7em;
     margin: 15px 0;
     margin-top: 0; }
+    body p.cp-p-ondark, html p.cp-p-ondark {
+      color: #fff; }
   body section, html section {
     margin-top: 75px; }
   body .cp-hidden, html .cp-hidden {
@@ -228,7 +232,7 @@ div.cp-header-normalizer {
   margin-top: 0;
   position: relative;
   background-image: url(images/un_house.jpg);
-  background-image: url(images/ss_wall.jpg);
+  background-image: url(images/un_house_sm.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
@@ -314,11 +318,20 @@ div.cp-header-normalizer {
 */
 .cp-paralax-price-container {
   background-image: url(images/chaney_landing_bg.jpg);
-  background-image: url(images/ss_wall.jpg);
+  background-image: url(images/un_house_sm.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  width: 100%; }
+  width: 100%;
+  padding: 35px 0; }
+  .cp-paralax-price-container div.cp-price-icon-col {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center; }
+    .cp-paralax-price-container div.cp-price-icon-col img {
+      height: 100%;
+      width: auto; }
   .cp-paralax-price-container div.cp-price {
     padding: 0;
     margin-top: 50px;
@@ -328,10 +341,8 @@ div.cp-header-normalizer {
       position: relative;
       text-align: center;
       z-index: 50;
-      padding: 35px;
+      padding: 0 35px;
       border: 1px solid transparent; }
-      .cp-paralax-price-container div.cp-price > div.cp-price-content p {
-        color: #333333; }
       .cp-paralax-price-container div.cp-price > div.cp-price-content h2 {
         margin: 0; }
 
@@ -428,7 +439,7 @@ div.cp-header-normalizer {
 *	Social Media Section
 */
 section.cp-social-media-section {
-  background-image: url(images/ss_wall.jpg);
+  background-image: url(images/un_house_sm.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
