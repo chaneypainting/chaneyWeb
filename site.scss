@@ -7,10 +7,10 @@
 *
 */
 
+
 /*
 *   Fonts
 */
-@import url(https://fonts.googleapis.com/css?family=Raleway:300|EB+Garamond|Satisfy);
 @font-face {
 	font-family: 'cp-icons';
 	src:url('fonts/chaney.eot');
@@ -160,6 +160,7 @@ $cp-section-top-margin: cp-spacing(15);
 */
 @mixin main-image-section() {
 	background-image: url(images/un_house.jpg);
+	transition: background-image .5s ease-out;
 	background-image: $cp-main-image;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -361,7 +362,7 @@ div.cp-header-normalizer {
 
 .cp-landing-section {
 
-    height: 700px;
+    height: 400px;
     overflow: hidden;
 	margin-top: 0;
 	position: relative;
@@ -488,7 +489,7 @@ div.cp-header-normalizer {
 		align-items: center;
 
 		img {
-			height: 100%;
+			height: 300px;
 			width: auto;
 
 		}

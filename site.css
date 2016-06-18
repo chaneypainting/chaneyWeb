@@ -9,7 +9,6 @@
 /*
 *   Fonts
 */
-@import url(https://fonts.googleapis.com/css?family=Raleway:300|EB+Garamond|Satisfy);
 @font-face {
   font-family: 'cp-icons';
   src: url("fonts/chaney.eot");
@@ -230,11 +229,12 @@ div.cp-header-normalizer {
 *   First Landing Section
 */
 .cp-landing-section {
-  height: 700px;
+  height: 400px;
   overflow: hidden;
   margin-top: 0;
   position: relative;
   background-image: url(images/un_house.jpg);
+  transition: background-image .5s ease-out;
   background-image: url(images/un_house_sm.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -321,6 +321,7 @@ div.cp-header-normalizer {
 */
 .cp-paralax-price-container {
   background-image: url(images/un_house.jpg);
+  transition: background-image .5s ease-out;
   background-image: url(images/un_house_sm.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -334,7 +335,7 @@ div.cp-header-normalizer {
     -ms-flex-align: center;
     align-items: center; }
     .cp-paralax-price-container div.cp-price-icon-col img {
-      height: 100%;
+      height: 300px;
       width: auto; }
   .cp-paralax-price-container div.cp-price {
     padding: 0;
@@ -366,6 +367,7 @@ div.cp-header-normalizer {
 */
 section.cp-community-section {
   background-image: url(images/un_house.jpg);
+  transition: background-image .5s ease-out;
   background-image: url(images/un_house_sm.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -457,6 +459,7 @@ section.cp-community-section {
 */
 section.cp-social-media-section {
   background-image: url(images/un_house.jpg);
+  transition: background-image .5s ease-out;
   background-image: url(images/un_house_sm.jpg);
   background-repeat: no-repeat;
   background-size: cover;

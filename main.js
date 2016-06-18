@@ -28,13 +28,30 @@ var Chaney = {
     rollerIndex: 1,
     rollerLength: null,
     rollerInterval: null,
-    startInterval: function() {
+    $paralaxElems: $('.js-page-paralax'),
+    startRollInterval: function() {
         Chaney.rollerInterval = setInterval(rollLanding, 6000);
     },
-    stopInterval: function() {
+    stopRollInterval: function() {
         clearInterval(Chaney.rollerInterval);
         Chaney.rollerInterval = null;
-    }
+    },
+    paralaxInterval: null,
+    startParaInterval: function () {
+        Chaney.paralaxInterval = setInterval(changeParalax, 12000);
+    },
+    stopParaInterval: function () {
+        clearInterval(Chaney.paralaxInterval);
+        Chaney.paralaxInterval = null;
+    },
+    paralaxIndex: 0,
+    paralaxImgsCount: 3,        // Manual
+    paralaxImgs: [              // Manual
+        "images/un_house.jpg",
+        "images/ocean.jpg",
+        "images/ss_bedroom.jpg"
+    ],
+
 }
 
 $(function() {
@@ -56,9 +73,26 @@ $(function() {
 
     // Kick Off Functions
     generateFormValidationRiddle();
-    Chaney.startInterval();
+    Chaney.startRollInterval();
+    // Chaney.startParaInterval();
 
 });
+
+function changeParalax() {
+    Chaney.$paralaxElems.css('background-image', getParalaxImage());
+}
+
+function getParalaxImage() {
+    var paraSrc = Chaney.paralaxImgs[Chaney.paralaxIndex];
+
+    Chaney.paralaxIndex++;
+
+    if (Chaney.paralaxIndex >= Chaney.paralaxImgsCount) {
+        Chaney.paralaxIndex = 0;
+    }
+
+    return `url(${paraSrc})`
+}
 
 function createTestimonialArray() {
 
@@ -72,13 +106,13 @@ function createTestimonialArray() {
 
 function rollLanding(index) {
 
-    Chaney.stopInterval();
+    Chaney.stopRollInterval();
 
     console.log('Index: ', index);
     console.log('RollerIndex: ', Chaney.rollerIndex);
 
     if (index == Chaney.rollerIndex) {
-        Chaney.startInterval();
+        Chaney.startRollInterval();
         return;
     }
 
@@ -98,7 +132,7 @@ function rollLanding(index) {
                 top: 0
             }, animateTime, function() {
 
-                Chaney.startInterval();
+                Chaney.startRollInterval();
 
             });
     });
